@@ -1,0 +1,26 @@
+{% extends 'flask_user/public_base.html' %}
+
+{% block content %}
+<div class="registration-email-sent">
+	<h3>Registration email sent</h3>
+	<p>
+	A confirmation email has been sent.
+	</p>
+
+	<p>
+	If you don't receive an email within a few minutes, please first check your
+	spam folder.
+	</p>
+
+	<p>
+	If your still experiencing difficulties confirming your account please email us
+	at:
+
+	<a href="mailto:hello@debugproxy.com">hello@debugproxy.com</a>
+	</p>
+	<div>
+	  <a class="link-buttons" href="{{ url_for('home.home_page') }}">Home</a>
+	</div>
+</div>
+
+{% endblock %}

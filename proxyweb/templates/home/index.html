@@ -1,0 +1,161 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+
+<div class="index">
+  <div class="hero">
+    <div class="container">
+
+    <div class="proxy-session">
+      <h1 class="proxy-title">
+        Proxy Session
+      </h1>
+      <div class="proxy-session__half">
+      {% if not session %}
+
+        <a class="link-buttons__pattern-bg" href="{{ url_for('sessions.generate') }}">
+          Start Session
+        </a>
+      {% else %}
+        <div class="proxy-session-status">
+          <div class="proxy-status">
+          Status:
+          {% if session.is_active %}
+            <span class="active">Active</span>
+          {% else %}
+            <span class="paused">Paused</span>
+          {% endif %}
+          </div>
+
+          <div class="username">
+            Username:
+            <span>{{ session.username }}</span>
+          </div>
+          <div class="password">
+            Password:
+            <span>{{ session.password }}</span>
+          </div>
+
+          {% if session.is_active %}
+          <div class="proxy-server">
+            Proxy server:
+            <span>{{ proxy_url }}</span>
+          </div>
+          {% endif %}
+        </div>
+        <div class="session-buttons">
+          {% if session.is_active %}
+            <a class="link-buttons__pattern-bg green-link" href="{{ url_for('sessions.traffic', session_id=session.id) }}">
+              Go to dashboard
+            </a>
+            <a class="link-buttons__pattern-bg blue-link" href="{{ url_for('sessions.pause', session_id=session.id) }}">
+              Pause
+            </a>
+            <a class="link-buttons__pattern-bg red-link" href="{{ url_for('sessions.kill', session_id=session.id) }}">
+              Delete
+            </a>
+          {% else %}
+            <a class="link-buttons__pattern-bg green-link" href="{{ url_for('sessions.enable', session_id=session.id) }}">
+              Enable Session [Paused]
+            </a>
+            <a class="link-buttons__pattern-bg red-link" href="{{ url_for('sessions.kill', session_id=session.id) }}">
+              Delete
+            </a>
+          {% endif %}
+        </div>
+        </div>
+        <div class="proxy-session__half--right">
+
+        {% endif %}
+        </div>
+      </div><!-- proxy-session -->
+    </div><!-- container  -->
+  </div><!-- hero -->
+  <section class="home-text slab-of-text">
+    <div class="container">
+      <div class="home-welcome">
+        <h2 class="welcome-title">Welcome</h2>
+        <p>
+          <span class="">debugProxy</span> is a HTTP/S proxy server that can be used by
+          any device that supports using HTTP Proxy servers.
+
+          Aditionally it is a web application that allows you to <span
+            class="violet">view</span>, <span class="violet">pause</span> and
+          <span class="violet">modify</span> traffic sent through the proxy.
+        </p>
+        <p>
+         This means, for example, you can use debugProxy on your computer or
+         tablet to view the traffic being sent from your phone or IOT device.
+        </p>
+        <p>
+          For information on configuring devices or applications to use
+          debugProxy have a look at our <a class="magenta-line"
+          href="{{ url_for('home.documentation') }}">documentation pages</a>.
+        </p>
+        {% if not session %}
+        <p>
+          To use the proxy a session must be started, this is done by pressing
+          the <span class="magenta">Start Session</span> button. This will
+          generate a temporary username and password that is used to authorize
+          requests.
+        </p>
+        {% endif %}
+        <div class="admin">
+          {% if current_user.is_admin %}
+            <h2 class="admin-title">Admin</h2>
+            <p class="admin-p">
+            You are logged in as an Admin. An Admin you can manage existing users and
+            invite new users.
+            </p>
+            <a class="link-buttons violet-link" href="{{url_for('users.admin_page') }}">
+              Manage Users
+            </a>
+            <a class="link-buttons magenta-link" href="{{url_for('users.admin_page') }}">
+              Invite User
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="curl">
+        <div class="curl-help">
+          <h2>cURL</h2>
+          <p>
+            If you have the <span class="violet">curl</span> program installed on your computer,
+            you can test if the proxy works with this command:
+          </p>
+          {% if session %}
+            <code>{{ "curl https://www.google.com/ --insecure --proxy " + session.username + ":" + session.password + "@" + proxy_url }}</code>
+          {% else %}
+            <code>{{ "curl https://www.google.com/ --insecure --proxy username:password@" + proxy_url }}</code>
+
+          {% endif %}
+
+          <p>
+            If this command works as expected the requests and responses will be on the dashboard.
+          </p>
+        </div>
+      </div>
+
+      <div class="home-ssl">
+        <h2 class="ssl-title">SSL Traffic</h2>
+        <p>
+          The proxy just works for HTTP requests, however to make <span
+            class="violet">HTTPS</span> and <span class="violet">HTTP2</span>
+          requests a root certificate needs to be downloaded and installed.
+        </p>
+        <p>
+          The <span class="violet">debugProxy root certificates</span> can be found on the <a
+            class="magenta-line" href="{{ url_for('home.certificates')
+            }}">certificates</a> page.
+        </p>
+        <p>
+         On most smart phones you can install the debugProxy root certificate by
+         simply clicking on the certificate for your device.
+        </p>
+      </div>
+    </div>
+  </section>
+  {% include "common/_footer.html" %}
+</div><!-- index -->
+
+{% endblock %}

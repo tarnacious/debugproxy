@@ -1,0 +1,38 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<section class="hero">
+	<div class="step-by-step-top container">
+		<h1>cURL</h1>
+		<p>Using debugProxy from the command line.</p>
+	</div>
+</section>
+<div class="home-body container slab-of-text step-by-step">
+
+      <p>
+      The simplest way to use the proxy is with the <span
+        class="violet">curl</span> program.  A <span
+        class="cyan">username</span> and <span class="blue">password</span> are
+      generated when you create a session. (Note the --insecure option aparently don't work with the version of curl that ships with OSX, with this version you will need to skip this step and download the root certificate)
+      </p>
+      <code>curl https://www.google.com/ --insecure --proxy $username:$password@{{ proxy_url }}</code>
+      <p>
+      The above curl command uses the
+      <span class="violet">--insecure</span> option.
+      This option can be omitted
+      if you download the
+      <a href="{{ url_for('home.certificates') }}">debugProxy CA certificate</a>.
+      </p>
+      <code>curl https://debugproxy.com{{ url_for("certificates.pem") }} > debugproxy.pem</code>
+      <p>
+      The <a href="{{ url_for('home.certificates') }}">debugProxy CA certificate</a>
+      can then be used with the
+      <span class="violet">--cacert</span> option instead.
+      </p>
+      <code>curl https://www.google.com/ --cacert debugproxy.pem --proxy $username:$password@{{ proxy_url }}</code>
+      <p>
+      If these commands work as expected the requests and responses will be on the dashboard</a>.
+      </p>
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

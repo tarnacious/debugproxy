@@ -1,0 +1,139 @@
+.load-intercepted-request-container {
+	@include margins
+
+	.load-request {
+		@include link-buttons
+		float: right;
+		width: calc(33.08% / 2);
+		margin-top: 6px;
+		margin-right: calc(33.33% / 2);
+		border-color: $green;
+		text-align: center;
+		text-decoration: none;
+		font-size: 1em;
+		@include mono-space
+		&:hover {
+			color: $green;
+			border-color: $green;
+		}
+	}
+}
+.intercepted-request-container {
+	@include margins
+	@include reveal
+
+	position: relative;
+	margin-top: 12px;
+  padding: .75em;
+  border: 1px solid $base02;
+
+
+	.edit-body { /* edit pre */
+		position: absolute;
+		top: .25em;
+		right: 10px;
+		min-width: 150px;
+
+		.edit-intercepted-request {
+			@include buttons-nav-edit
+			position: relative;
+			float: right;
+			text-align: center;
+			width: 100%;
+			&:hover {
+				border-color: $green;
+				color: $green;
+			}
+		}
+	}
+	.img-container {
+		text-align: center;
+	}
+	.no-body-content {
+		margin-top: .25em;
+		padding-top: .25em;
+		@include mono-space
+		font-size: 14px;
+		text-align: center;
+		color: $base0;
+	}
+
+	.ace_editor {
+		height: 100%;
+		.ace_scroller {
+			width: 94%; /* clears scroll bar */
+ 			.ace_content {
+
+				.ace_layer {
+
+					.ace_print-margin {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.editing-intercepted-request-container {
+
+		@include reveal
+    width: 100%;
+    height: 50%;
+
+		.editing-intercepted-request {
+			padding: 1em;
+			border: 1px solid $base02;
+	 	  box-shadow: 3px 3px 9px #002129;
+
+			.editing-buttons-container {
+				margin: 0px 0px .75em;
+				float: right;
+
+				.update-intercepted-request{
+					@include buttons-nav-edit
+
+					&:hover {
+						border-color: $green;
+						color: $green;
+					}
+				}
+
+				.cancel-intercepted-request{
+					@include buttons-nav-edit
+					margin-right: 2px;
+
+					&:hover {
+						border-color: $yellow;
+						color: $yellow;
+					}
+				}
+			}
+
+			.intercepted-request-text {
+
+				@include mono-space
+			  @include inputBox
+
+		    width: 100%;
+		    padding: .75em;
+		    min-height: 300px;
+		    background-color: $base2;
+
+				&:focus {
+					background-color: $base3;
+					color: $base00;
+				}
+		  }
+		}
+	}
+
+	pre.intercepted-request-content { /* display of the body */
+
+		min-height: 100px;
+		max-height: 300px;
+		overflow: auto;
+		padding: .75em;
+		border: 1px solid $base02;
+		color: $base0;
+	}
+}

@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.81 352.63">
+  <defs>
+    <style>
+      .\33 86054ab-9dd1-4ad6-9ee1-fbf314a707c8, .c8b86c77-4c46-4373-bdaf-f95bd8f5f816, .c8bf1956-8071-4587-9072-f681b4a20e11, .d842d3f7-6ba5-4730-905a-86116920cff9 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .c8b86c77-4c46-4373-bdaf-f95bd8f5f816, .d842d3f7-6ba5-4730-905a-86116920cff9 {
+        stroke: #073642;
+      }
+
+      .bb74f0d7-b97c-4d36-984e-3d4e929ac9c5, .dac3226f-1ecf-4f91-b611-33b2a4495f7f {
+        fill: #073642;
+      }
+
+      .c8bf1956-8071-4587-9072-f681b4a20e11 {
+        stroke: #033;
+      }
+
+      .\36 94ffd78-c790-4f30-a899-bbffdb988d82, .c2ccdedc-ff5c-4c00-a2dc-36903a5d3adc, .dac3226f-1ecf-4f91-b611-33b2a4495f7f {
+        font-size: 8px;
+        font-family: NotoSans, Noto Sans;
+      }
+
+      .c2ccdedc-ff5c-4c00-a2dc-36903a5d3adc {
+        fill: #268bd2;
+      }
+
+      .\34 9a99484-67d9-43d6-878a-b0201ac702a2 {
+        letter-spacing: -0.02em;
+      }
+
+      .\36 94ffd78-c790-4f30-a899-bbffdb988d82 {
+        fill: #586e75;
+      }
+
+      .\33 86054ab-9dd1-4ad6-9ee1-fbf314a707c8 {
+        stroke: #268bd2;
+      }
+
+      .\37 24c0287-4236-459f-ae50-5e6b40ac4d0a {
+        fill: #eee8d5;
+      }
+
+      .d842d3f7-6ba5-4730-905a-86116920cff9 {
+        stroke-width: 0.5px;
+      }
+
+      .d3d1ffff-df2f-4ed6-8341-9c8625d11b6a {
+        fill: #859900;
+      }
+    </style>
+  </defs>
+  <title>iPhone5c</title>
+  <g id="b39e6766-3786-44c1-a5a1-80dca499bd9f" data-name="Phone2">
+    <g>
+      <g>
+        <rect class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" y="2.01" width="167.81" height="348.6" rx="28.18" ry="28.18"/>
+        <circle class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" cx="83.9" cy="325.24" r="15.69"/>
+        <rect class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" x="79.35" y="321" width="9.11" height="9.11" rx="2.83" ry="2.83"/>
+        <circle class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" cx="83.9" cy="19.39" r="2.82"/>
+        <circle class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" cx="61.84" cy="32.37" r="1.42"/>
+        <line class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" x1="70.36" y1="32.37" x2="97.45" y2="32.37"/>
+        <rect class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" x="11.2" y="47.98" width="145.41" height="258.04"/>
+      </g>
+      <rect class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" x="10.79" y="113.22" width="145.82" height="20.19"/>
+      <rect class="c8bf1956-8071-4587-9072-f681b4a20e11" x="11.2" y="47.98" width="145.37" height="28.94"/>
+      <text class="c2ccdedc-ff5c-4c00-a2dc-36903a5d3adc" transform="translate(23.88 70.14)">Settings</text>
+      <text class="c2ccdedc-ff5c-4c00-a2dc-36903a5d3adc" transform="translate(31.33 126.17)"><tspan class="49a99484-67d9-43d6-878a-b0201ac702a2">Y</tspan><tspan x="4.33" y="0">our Wi-Fi</tspan></text>
+      <text class="694ffd78-c790-4f30-a899-bbffdb988d82" transform="translate(74.69 70.14)">Wi-Fi</text>
+      <text class="694ffd78-c790-4f30-a899-bbffdb988d82" transform="translate(31.34 105.96)">Wi-Fi</text>
+      <polyline class="386054ab-9dd1-4ad6-9ee1-fbf314a707c8" points="20.33 71.3 15.98 66.94 20.19 62.73"/>
+      <rect class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" x="10.79" y="93.03" width="145.82" height="40.37"/>
+      <polyline class="386054ab-9dd1-4ad6-9ee1-fbf314a707c8" points="18.28 123.43 19.89 125.04 23.45 121.48"/>
+      <g>
+        <text class="c2ccdedc-ff5c-4c00-a2dc-36903a5d3adc" transform="translate(143.75 126.17)">i</text>
+        <circle class="386054ab-9dd1-4ad6-9ee1-fbf314a707c8" cx="144.71" cy="123.37" r="4.73"/>
+      </g>
+      <g>
+        <path class="724c0287-4236-459f-ae50-5e6b40ac4d0a" d="M135.48,121.7a6.36,6.36,0,0,0-9,0,.35.35,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,5,5,0,0,1,7,0,.34.34,0,0,0,.5,0l.5-.5a.32.32,0,0,0,.11-.25.28.28,0,0,0-.11-.25Zm0,0"/>
+        <path class="724c0287-4236-459f-ae50-5e6b40ac4d0a" d="M131,122.66a3.47,3.47,0,0,0-2.49,1,.34.34,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,2.1,2.1,0,0,1,1.49-.6,2.26,2.26,0,0,1,1.5.6.34.34,0,0,0,.5,0l.5-.5a.34.34,0,0,0,0-.5,3.47,3.47,0,0,0-2.49-1Zm0,0"/>
+        <path class="724c0287-4236-459f-ae50-5e6b40ac4d0a" d="M131.67,126.22a.71.71,0,1,1-.71-.71.71.71,0,0,1,.71.71Zm0,0"/>
+      </g>
+      <g>
+        <rect class="d842d3f7-6ba5-4730-905a-86116920cff9" x="10.79" y="156.81" width="145.82" height="20.19"/>
+        <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(31.33 169.71)">Random Wi-Fi</text>
+        <g>
+          <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(143.75 169.71)">i</text>
+          <circle class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" cx="144.71" cy="166.91" r="4.73"/>
+        </g>
+        <g>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M135.48,165.23a6.36,6.36,0,0,0-9,0,.35.35,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,5,5,0,0,1,7,0,.34.34,0,0,0,.5,0l.5-.5a.32.32,0,0,0,.11-.25.28.28,0,0,0-.11-.25Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131,166.19a3.47,3.47,0,0,0-2.49,1,.34.34,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,2.1,2.1,0,0,1,1.49-.6,2.26,2.26,0,0,1,1.5.6.34.34,0,0,0,.5,0l.5-.5a.34.34,0,0,0,0-.5,3.47,3.47,0,0,0-2.49-1Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131.67,169.75A.71.71,0,1,1,131,169a.71.71,0,0,1,.71.71Zm0,0"/>
+        </g>
+      </g>
+      <g>
+        <rect class="d842d3f7-6ba5-4730-905a-86116920cff9" x="10.79" y="177" width="145.82" height="20.19"/>
+        <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(31.33 189.9)">Random Wi-Fi</text>
+        <g>
+          <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(143.75 189.9)">i</text>
+          <circle class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" cx="144.71" cy="187.09" r="4.73"/>
+        </g>
+        <g>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M135.48,185.42a6.36,6.36,0,0,0-9,0,.35.35,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,5,5,0,0,1,7,0,.34.34,0,0,0,.5,0l.5-.5a.32.32,0,0,0,.11-.25.28.28,0,0,0-.11-.25Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131,186.38a3.47,3.47,0,0,0-2.49,1,.34.34,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,2.1,2.1,0,0,1,1.49-.6,2.26,2.26,0,0,1,1.5.6.34.34,0,0,0,.5,0l.5-.5a.34.34,0,0,0,0-.5,3.47,3.47,0,0,0-2.49-1Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131.67,189.94a.71.71,0,1,1-.71-.71.71.71,0,0,1,.71.71Zm0,0"/>
+        </g>
+      </g>
+      <g>
+        <rect class="d842d3f7-6ba5-4730-905a-86116920cff9" x="10.79" y="197.19" width="145.82" height="20.19"/>
+        <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(31.33 210.08)">Random Wi-Fi</text>
+        <g>
+          <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(143.75 210.08)">i</text>
+          <circle class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" cx="144.71" cy="207.28" r="4.73"/>
+        </g>
+        <g>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M135.48,205.61a6.36,6.36,0,0,0-9,0,.35.35,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,5,5,0,0,1,7,0,.34.34,0,0,0,.5,0l.5-.5a.32.32,0,0,0,.11-.25.28.28,0,0,0-.11-.25Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131,206.57a3.47,3.47,0,0,0-2.49,1,.34.34,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0A2.1,2.1,0,0,1,131,208a2.26,2.26,0,0,1,1.5.6.34.34,0,0,0,.5,0l.5-.5a.34.34,0,0,0,0-.5,3.47,3.47,0,0,0-2.49-1Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131.67,210.13a.71.71,0,1,1-.71-.71.71.71,0,0,1,.71.71Zm0,0"/>
+        </g>
+      </g>
+      <g>
+        <rect class="d842d3f7-6ba5-4730-905a-86116920cff9" x="10.79" y="217.37" width="145.82" height="20.19"/>
+        <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(31.33 230.27)">Random Wi-Fi</text>
+        <g>
+          <text class="dac3226f-1ecf-4f91-b611-33b2a4495f7f" transform="translate(143.75 230.27)">i</text>
+          <circle class="c8b86c77-4c46-4373-bdaf-f95bd8f5f816" cx="144.71" cy="227.47" r="4.73"/>
+        </g>
+        <g>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M135.48,225.79a6.36,6.36,0,0,0-9,0,.35.35,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,5,5,0,0,1,7,0,.34.34,0,0,0,.5,0l.5-.5a.32.32,0,0,0,.11-.25.28.28,0,0,0-.11-.25Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131,226.76a3.47,3.47,0,0,0-2.49,1,.34.34,0,0,0,0,.5l.5.5a.34.34,0,0,0,.5,0,2.1,2.1,0,0,1,1.49-.6,2.26,2.26,0,0,1,1.5.6.34.34,0,0,0,.5,0l.5-.5a.34.34,0,0,0,0-.5,3.47,3.47,0,0,0-2.49-1Zm0,0"/>
+          <path class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" d="M131.67,230.32a.71.71,0,1,1-.71-.71.71.71,0,0,1,.71.71Zm0,0"/>
+        </g>
+      </g>
+      <g>
+        <path class="d3d1ffff-df2f-4ed6-8341-9c8625d11b6a" d="M149.38,103.36a6.89,6.89,0,0,1-6.9,6.89h-9.25a6.89,6.89,0,1,1,0-13.79h9.25A6.9,6.9,0,0,1,149.38,103.36Z"/>
+        <circle class="bb74f0d7-b97c-4d36-984e-3d4e929ac9c5" cx="142.32" cy="103.35" r="6.31"/>
+      </g>
+    </g>
+  </g>
+</svg>

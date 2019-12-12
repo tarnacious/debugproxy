@@ -1,0 +1,35 @@
+.reverse,
+.unreverse {
+	@include buttons-nav-edit
+	padding: .5em .75em;
+	height: 28px;
+	&:hover {
+		color: $cyan;
+		border-color: $cyan;
+		span {
+			color: $cyan;
+		}
+	}
+}
+.reverse {
+	span::after {
+		content: "";
+		position: relative;
+
+		display: inline-block;
+		border-width: 10px 7px 0px 7px;
+		border-style: solid;
+		border-color: $cyan transparent;
+	}
+}
+.unreverse {
+	span::after {
+		content: "";
+		position: relative;
+
+		display: inline-block;
+		border-width: 0px 7px 10px 7px;
+		border-style: solid;
+		border-color: $cyan transparent;
+	}
+}

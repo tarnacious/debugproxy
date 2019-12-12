@@ -1,0 +1,196 @@
+
+.info-box {
+	position: absolute;
+  z-index: 100;
+  padding: 1em;
+  background-color: rgba(7, 54, 66, .95);  /* base02 with alpha */
+  border-radius: 5px;
+  box-shadow: 3px 3px 9px #002129;
+  margin-top: 15px;
+  width: 350px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    border-width: 15px 0 0px 10px;
+    border-style: solid;
+    border-color: transparent $base02;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    border-width: 0px 0px 15px 10px;
+    border-style: solid;
+    border-color: $base02 transparent;
+  }
+
+  .info-box-container {
+
+    padding: .75em;
+    border: 1px solid $base03;
+    border-radius: 5px;
+    text-align: left !important;
+
+    .title {
+  		font-size: 16px;
+
+    }
+    p {
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .create-intercept-title {
+      color: $yellow;
+    }
+  }
+}
+.info-box-right {
+  position: absolute;
+  z-index: 100;
+  padding: 1em;
+  background-color: rgba(7, 54, 66, .95);  /* base02 with alpha */
+  border-radius: 5px;
+  box-shadow: 3px 3px 9px #002129;
+  margin-top: 15px;
+  top: 27px;
+  right: -14px; /* default for States */
+  width: 350px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 25px;
+    border-width: 15px 10px 0px 0px;
+    border-style: solid;
+    border-color: transparent $base02;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    border-width: 0px 10px 15px 0px;
+    border-style: solid;
+    border-color: $base02 transparent;
+  }
+
+  .info-box-container {
+
+    padding: .75em;
+    border: 1px solid $base03;
+    border-radius: 5px;
+    text-align: left !important;
+    color: $base0;
+
+    .title {
+      font-size: 16px;
+    }
+    .request {
+      color: $green;
+    }
+    .response {
+      color: $violet;
+    }
+    p {
+      font-size: 12px;
+      line-height: 1.25;
+    }
+  }
+}
+
+.magenta {
+  color: $magenta;
+}
+
+#resume-info {
+  left: -2px;
+  top: 44px;
+
+  .title {
+    color: $green;
+  }
+  .response {
+    color: $violet;
+  }
+}
+#clear-info {
+  top:32px;
+  right: -6px;
+
+  .title {
+    color: $red;
+  }
+}
+#connection-info {
+  top: 25px;
+  right: 33px;
+  .title {
+    color: $green;
+  }
+}
+#address-info {
+  top: 25px;
+  .title {
+    color: $yellow;
+  }
+  p,
+  span {
+    font-size: 12px;
+  }
+  .info-username {
+    color: $cyan;
+  }
+  .info-password {
+    color: $blue;
+  }
+  .info-server {
+    color: $yellow;
+  }
+  .info-port {
+    color: $magenta;
+  }
+}
+/* Delayed fade */
+
+.delayed-fade-enter {
+  opacity: 0.01;
+}
+
+.delayed-fade-enter.delayed-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.delayed-fade-leave {
+  opacity: 1;
+}
+
+.delayed-fade-leave.delayed-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+/* Normal fade */
+.normal-fade-enter {
+  opacity: 0.01;
+}
+
+.normal-fade-enter.normal-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.normal-fade-leave {
+  opacity: 1;
+}
+
+.normal-fade-leave.normal-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+

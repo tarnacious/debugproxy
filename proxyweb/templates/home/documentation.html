@@ -1,0 +1,227 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<section class="hero">
+	<div class="step-by-step-top container slab-of-text">
+		<h1>Guides</h1>
+    <a class="violet-link link-buttons__pattern-bg" href="{{ url_for('home.documentation') }}">Introduction</a>
+    <a class="yellow-link link-buttons__pattern-bg" href="{{ url_for('home.curl') }}">cURL</a>
+		<a class="green-link link-buttons__pattern-bg" href="{{ url_for('home.android') }}">Android</a>
+    <a class="blue-link link-buttons__pattern-bg" href="{{ url_for('home.ios') }}">iPhone</a>
+	</div>
+</section>
+<div class="home-body container step-by-step slab-of-text">
+  <p>
+  To use debugProxy effectively a basic understanding of how it works is
+  important. Here we cover the basic concepts and basic usage of debugProxy.
+  </p>
+
+	<h3>Proxy servers</h3>
+  <p>
+  A proxy server acts as an intermediary between a client and other servers on
+  the Internet. When a client requests a resource from the Internet, it asks the
+  proxy server and the proxy server requests the resource from the internet and
+  returns it to the client.
+  </p>
+
+	<h3>HTTP Proxy servers</h3>
+  <p>
+  Proxy servers can work on different network layers. A HTTP proxy works on
+  the relatively high level HTTP, HTTP2 and HTTPS protocol layers. A HTTP proxy
+  expects HTTP requests and returns HTTP responses.
+  </p>
+  <p>
+  HTTP proxies are often used to allow controlled access to resources inside a
+  private network. They are also often used to mask the identity and location
+  of a client. In this regard they are similar to a VPN.
+  </p>
+
+  <h3>How a HTTP proxy server works</h3>
+  <p>
+  To make a HTTP request, a client looks up the IP address of the domain from a
+  DNS server. The client then makes a connection to the IP address and sends a
+  HTTP request describing what resources they want from that server. The server
+  should then respond with a HTTP response containing a code, headers and
+  response body.
+  </p>
+  <p>
+  Making a HTTP request through a HTTP Proxy is very similar. Instead of
+  looking up the address of the server, it sends a HTTP Proxy request to the
+  proxy&rsquo;s IP address. A proxy HTTP request is exactly the same as a normal HTTP
+  request, except that it includes the server domain name and scheme (http:// or
+  https://).
+  </p>
+  <p>
+  The proxy server is then responsible for looking up the IP address of the
+  domain and then connecting to the IP address, converting the proxy HTTP
+  request into a normal HTTP request and sending it. The proxy then returns the
+  response to the client.
+  </p>
+  <p>
+  HTTPS and HTTP2 connections are a bit more complicated as they also negotiate
+  a secure connection and verify the connection but they follow the same
+  principal.
+  </p>
+
+  <h3>The debugProxy proxy server</h3>
+  <p>
+  The debugProxy proxy server is a hosted, multi-user, HTTP proxy server. If a
+  valid user name and password is provided it will proxy HTTP requests.
+  </p>
+  <p>
+  From the logged in debugProxy website, you can start a new proxy session. This
+  will generate a username and a password. You can use these credentials while
+  the proxy session is active.
+  </p>
+  <p>
+  The debugProxy proxy server does a bit more than a regular proxy. It stores
+  the requests and responses for you and lists them as they happen in your
+  debugProxy dashboard. It also checks if you have elected for any requests to
+  be paused. Paused requests a not fulfilled until they are resumed from the
+  dashboard. Paused requests and responses may also be modified in the
+  dashboard before they are resumed.
+  </p>
+  <p>
+  debugProxy also acts as a Certificate Authority and generates valid
+  certificates on-the-fly to enable viewing of encrypted traffic. This is
+  covered in more detail later.
+  </p>
+
+	<h3>Using the proxy</h3>
+  <p>
+  HTTP proxies are relatively well supported. All major web browsers on all
+  major operating systems, including Android and iOS, have support for them.
+  Standard network utilities like cURL and wget have proxy support.
+  </p>
+  <p>
+  debugProxy is a standard HTTP proxy that requires authentication. For
+  any device to use the proxy it will generally require four pieces of information.
+  </p>
+
+  <ul>
+    <li>
+      A <span class="yellow">server</span> name, which for debugProxy is always <span class="yellow">debugproxy.com</span>
+    </li>
+    <li>
+      A <span class="magenta">port</span>, which for debugProxy is always <span class="magenta">8080</span>
+    </li>
+    <li>
+      A <span class="cyan">username</span>, which will be generated when you create a proxy session on
+      debugproxy.com.
+    </li>
+    <li>
+      A <span class="blue">password</span>, which will be generated when you create a proxy session on
+      debugproxy.com.
+    </li>
+  </ul>
+  <p>
+  Below are links to guides for setting up debugProxy on your device. If there is currently
+  no guide for setting up debugProxy on your system, searching for general
+  information about setting up a proxy on that system should also apply to
+  debugProxy.
+  </p>
+  <a class="yellow-link link-buttons__pattern-bg" href="{{ url_for('home.curl') }}">cURL</a>
+  <a class="green-link link-buttons__pattern-bg" href="{{ url_for('home.android') }}">Android Config</a>
+  <a class="blue-link link-buttons__pattern-bg" href="{{ url_for('home.ios') }}">iOS Config</a>
+
+  <br>
+  <br>
+  <br>
+
+  <h3>The phases of a proxy server</h3>
+  <p>
+  To understand the debugProxy interface, and proxies in general, understanding
+  four key phases of a proxy request are important.
+  </p>
+  <p>
+  The first phase is when the proxy receives a requests from the client. At
+  this phase the proxy server knows what the client wants. In debugProxy,
+  requests can be paused at this phase and what the client is asking for can
+  be modified!
+  </p>
+  <p>
+  The second phase is requesting the resource on behalf of the client. This
+  stage can't be paused, but what is requested can be modified in the previous
+  phase.
+  </p>
+  <p>
+  The third phase is when the proxy has received a response for the request. In
+  debugProxy the request can be paused here too. When it's paused the response
+  can be modified.
+  </p>
+  <p>
+  In the forth and final phase the response is returned to the client. The
+  stage can't be paused, any changes to the response must be made in the
+  previous phase (3rd).
+  </p>
+  <p>
+  Hopefully this mostly makes sense, now we can have a look at the debugProxy
+  dashboard.
+  </p>
+
+  <h3>The debugProxy dashboard</h3>
+  <p>The debugProxy dashboard is a user interface to a debugProxy proxy
+  sesssion.</p>
+
+  </div>
+  <div class="container screen-shot">
+    <img src="/static/img/debugTechBikers.png" alt="dashboard screenshot">
+  </div>
+  <div class="home-body container step-by-step slab-of-text">
+
+  <h3>The request list</h3>
+  <p>
+  The request list shows all the requests and HTTPS connections being sent
+  through the proxy. The state of each request updates as the upstream connection
+  is made, received and returned to the client.
+  </p>
+  <p>
+  Requests can be selected and the details of the currently selected request is
+  displayed on the right in the request details and request progress sections.
+  </p>
+  <p>
+  A maximum of 1000 requests will be shown in the list. The requests in the
+  list can be cleared at any time, this permanently removes the whole list.
+  </p>
+  <h3>The Request Detail</h3>
+  <p>
+  In the Request Detail, all the details about the requests and the responses – once they have been received – are shown. <br>
+  They include:
+  <ul>
+     <li>The request location and
+  any error information (in the <span class="base1">Overview</span> tab)</li>
+     <li>The request headers and body (in
+  the <span class="green">Request</span> tab)</li>
+     <li>The response headers, status code and body (in the <span class="violet">Response</span>
+  tab)</li>
+   </ul>
+  </p>
+  <h3>The Request Progress</h3>
+  <p>
+  Knowing the current state of a request is important when using debugProxy,
+  especially if you are modifying requests.
+  </p>
+  <p>
+  The four lights represent the current state of each of the four phases of a
+  proxy request. Posible states are not started, started, in progress, errored
+  and completed.
+  </p>
+  <p>
+
+  </p>
+  <h3>Pausing requests</h3>
+  <p>
+  By default requests to the proxy will immediately be requested and returned to
+  the client, not allowing any chance to pause and modify the response.
+  To pause requests we must tell debugProxy which requests we want to pause
+  before they happen.
+  </p>
+  <p>
+  This is done by creating an "Intercept", by clicking on the pause button.
+  This allows you to specify requests to be blocked.
+  </p>
+
+
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

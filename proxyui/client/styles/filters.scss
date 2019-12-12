@@ -1,0 +1,17 @@
+@import 'mixins';
+
+.filters {
+	display: inline-block;
+	float: left;
+	width: 45%;
+	padding-bottom: 1em;
+  input {
+      @include inputBox
+			color: $base1;
+			width: 95%;
+  }
+  @include placeholder {
+  	color: $base01;
+  	font-size: 12px;
+	}
+}

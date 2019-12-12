@@ -1,0 +1,42 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<section class="hero">
+	<div class="step-by-step-top container videos-page">
+		<h1>Demonstration videos</h1>
+		<p>Video demonstrations to help you set-up and understand debugProxy.</p>
+	</div>
+</section>
+<div class="home-body container step-by-step videos-page">
+	<div class="ss-container video-wrapper">
+		<div class="step">
+			<h2>Video 1</h2>
+			<p>A short video of the steps needed to set up a proxy (in this case debugProxy) on an iPhone5 running iOS 10.</p>
+		</div>
+		<div class="svg-container youtube-container">
+			<iframe src="https://www.youtube.com/embed/XWC41SWFPYw" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+
+	<div class="ss-container video-wrapper">
+		<div class="step">
+			<h2>Video 2</h2>
+			<p>Video Ipsum</p>
+		</div>
+		<div class="svg-container youtube-container">
+			<iframe src="https://www.youtube.com/embed/XWC41SWFPYw" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+
+	<div class="ss-container video-wrapper">
+		<div class="step">
+			<h2>Video 3</h2>
+			<p>Video Ipsum</p>
+		</div>
+		<div class="svg-container youtube-container">
+			<iframe src="https://www.youtube.com/embed/XWC41SWFPYw" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<section class="hero">
+	<div class="step-by-step-top container slab-of-text">
+		<h1>About the beta</h1>
+		<p></p>
+	</div>
+</section>
+<div class="home-body container step-by-step slab-of-text">
+  <p>
+    We&rsquo;ve been working on debugProxy privately for some time and now feel
+    we are at the point where the service is solid enough to share publicly. We
+    hope by doing this, we can show what we have been building – and in turn – get valuable
+    feedback to further improve our labour of love (and sometimes also anguish and frustration).
+  </p>
+  <p>
+    We are looking for both technical feedback in terms of how the system
+    handles real users and also feedback from users to help us identify bugs and
+    prioritize features. Our focus for the immediate future is on making the
+    core proxy functionality and current features more solid, however we are
+    still very interested in what features people want for when we finally get
+    around to working on them.
+  </p>
+  <p>
+    In terms of what to expect from the beta; Provided all the services are
+    running and the system is not overloaded, you should be able to register an
+    account and start a proxy session. The proxy server should reliably proxy
+    requests and the requests should be shown in the dashboard. Viewing the
+    request and response data is somewhat limited, responses that return a
+    Content-Type header with a known encoding should be rendered in the UI as
+    expected. Binary responses, for example images, are rendered as base64
+    encoded strings. Modifying the request and response headers and body
+    content (binary bodies must be encoded as base64) and status code should
+    work.
+  </p>
+  <p>
+    The beta service is running on a single physical Intel Xeon E3-1271V3
+    machine hosted in Germany by Hetzner. We have done some load testing on
+    this server so we have some idea how it performs in terms of raw request
+    throughput, but have no idea how this will translate to real world usage.
+    There is some system and application rate-limiting in place intended to
+    mitigate abuse, but we are not sure how effective this will be.
+  </p>
+  <p>
+    We really hope you have a good experience using the beta. Whatever happens
+    it will be a useful experience for us. Please email us with any feedback
+    you have, we&rsquo;d love to receive it even if it&rsquo;s not what we&rsquo;d like to hear.
+  </p>
+  <p><a href="mailto:hello@debugproxy.com">hello@debugproxy.com</a></p>
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

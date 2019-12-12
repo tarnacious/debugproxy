@@ -1,0 +1,94 @@
+.link-buttons { /* New Button Styling */
+  @include link-buttons
+}
+
+.link-buttons__pattern-bg {
+	@extend .link-buttons;
+	&:hover {
+		background-color: $base1;
+		color: $base03 !important; /* overrides color on onhover */
+	}
+}
+.green-link {
+	border-color: $green;
+	&:hover {
+		color: $green;
+		border-color: $green;
+	}
+}
+.magenta-link {
+	border-color: $magenta;
+	&:hover {
+		color: $magenta;
+		border-color: $magenta;
+	}
+}
+.violet-link {
+	border-color: $violet;
+	&:hover {
+		color: $violet;
+		border-color: $violet;
+	}
+}
+.blue-link {
+	border-color: $blue;
+	&:hover {
+		color: $blue;
+		border-color: $blue;
+	}
+}
+.red-link {
+	border-color: $red;
+	&:hover {
+		color: $red;
+		border-color: $red;
+	}
+}
+.cyan-link {
+	border-color: $cyan;
+	&:hover {
+		color: $cyan;
+		border-color: $cyan;
+	}
+}
+.yellow-link {
+	border-color: $yellow;
+	&:hover {
+		color: $yellow;
+		border-color: $yellow;
+	}
+}
+
+
+button.green { /* Edit SAVE headers buttons */
+  @include link-buttons
+	border-color: $green;
+    &:hover {
+      border-color: $green;
+    }
+
+}
+button.red { /* Edit DELETE headers buttons */
+  @include link-buttons
+	border-color: $red;
+    &:hover {
+    border-color: $red;
+    }
+
+}
+button.yellow { /* Edit CANCEL headers buttons */
+  @include link-buttons
+	border-color: $yellow;
+    &:hover {
+        border-color: $yellow;
+    }
+
+}
+button.violet { /* Add Response headers button */
+  @include link-buttons
+	border-color: $violet;
+    &:hover {
+        border-color: $violet;
+    }
+
+}

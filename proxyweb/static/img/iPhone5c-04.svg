@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.81 352.63">
+  <defs>
+    <style>
+      .\30 1201e51-383c-47a3-80d9-dcb00067f7a3, .\33 d25459a-ced0-45b8-9edb-13532788fd44, .\38 c68097e-a7f9-46c4-9b7c-26ddc0c7528c {
+        fill: none;
+      }
+
+      .\30 1201e51-383c-47a3-80d9-dcb00067f7a3, .\31 2ccc432-72de-4ebf-8f66-3c582ec4e0ba {
+        stroke: #073642;
+      }
+
+      .\30 1201e51-383c-47a3-80d9-dcb00067f7a3, .\31 2ccc432-72de-4ebf-8f66-3c582ec4e0ba, .\33 d25459a-ced0-45b8-9edb-13532788fd44, .\38 c68097e-a7f9-46c4-9b7c-26ddc0c7528c {
+        stroke-miterlimit: 10;
+      }
+
+      .\30 2bc8de9-d67e-4d56-b4bd-546c974f4cea, .\31 2ccc432-72de-4ebf-8f66-3c582ec4e0ba, .\31 7399add-f160-4801-970c-0851ccb20968 {
+        fill: #073642;
+      }
+
+      .\30 0bce68d-73a6-4f8a-b699-664378530561, .\30 f074f5c-31dc-428a-add5-b9f1a8e1b9a6, .\31 7399add-f160-4801-970c-0851ccb20968, .\35 096ec11-11a6-473c-9692-0af3cb890bf0, .\35 24ef114-9290-4ba0-a68e-35dc95938f3b, .\39 94655af-20ec-4821-ace4-039fcb1c8b03 {
+        font-size: 8px;
+      }
+
+      .\30 f074f5c-31dc-428a-add5-b9f1a8e1b9a6, .\32 e4c54a2-6630-45de-b223-a8247c036c1c, .\33 ab42e62-b340-43af-ac57-dcdaee81e823 {
+        fill: #eee8d5;
+      }
+
+      .\30 0bce68d-73a6-4f8a-b699-664378530561, .\30 f074f5c-31dc-428a-add5-b9f1a8e1b9a6, .\31 7399add-f160-4801-970c-0851ccb20968, .\32 e4c54a2-6630-45de-b223-a8247c036c1c, .\33 ab42e62-b340-43af-ac57-dcdaee81e823, .\34 96030cf-e63d-4100-9727-bd7e0d277ddd, .\35 096ec11-11a6-473c-9692-0af3cb890bf0, .\35 24ef114-9290-4ba0-a68e-35dc95938f3b, .\39 94655af-20ec-4821-ace4-039fcb1c8b03 {
+        font-family: NotoSans, Noto Sans;
+      }
+
+      .\30 0bce68d-73a6-4f8a-b699-664378530561 {
+        fill: #b58900;
+      }
+
+      .\35 2083e59-75a3-4a0b-96d4-fc2cc3cbb8b2 {
+        letter-spacing: -0.01em;
+      }
+
+      .\35 24ef114-9290-4ba0-a68e-35dc95938f3b {
+        fill: #d33682;
+      }
+
+      .\31 2ccc432-72de-4ebf-8f66-3c582ec4e0ba {
+        stroke-width: 0.25px;
+      }
+
+      .\35 096ec11-11a6-473c-9692-0af3cb890bf0, .dad1edc7-ae5a-4fea-b572-fa004ac2e405 {
+        fill: #586e75;
+      }
+
+      .\33 d25459a-ced0-45b8-9edb-13532788fd44 {
+        stroke: #033;
+      }
+
+      .\34 96030cf-e63d-4100-9727-bd7e0d277ddd, .\39 94655af-20ec-4821-ace4-039fcb1c8b03, .c650ad3a-7e7a-4c87-9642-c6082b9d4a65 {
+        fill: #268bd2;
+      }
+
+      .\38 c68097e-a7f9-46c4-9b7c-26ddc0c7528c {
+        stroke: #268bd2;
+      }
+
+      .\30 3680da4-b128-42f6-8ee3-388726f68d65 {
+        letter-spacing: -0.02em;
+      }
+
+      .\32 e4c54a2-6630-45de-b223-a8247c036c1c {
+        font-size: 7px;
+      }
+
+      .\39 4459830-ece5-40c8-855b-de5ffd38b2ec {
+        letter-spacing: 0.01em;
+      }
+
+      .\31 532246e-0aac-40ec-ad8c-89da675bbda6 {
+        letter-spacing: -0.01em;
+      }
+
+      .\33 ab42e62-b340-43af-ac57-dcdaee81e823, .\34 96030cf-e63d-4100-9727-bd7e0d277ddd {
+        font-size: 6px;
+      }
+    </style>
+  </defs>
+  <title>iPhone5c</title>
+  <g id="b7484933-b1d7-4a50-8c84-953a7c253907" data-name="Phone4">
+    <g>
+      <g>
+        <rect class="01201e51-383c-47a3-80d9-dcb00067f7a3" y="2.01" width="167.81" height="348.6" rx="28.18" ry="28.18"/>
+        <circle class="01201e51-383c-47a3-80d9-dcb00067f7a3" cx="83.9" cy="325.24" r="15.69"/>
+        <rect class="01201e51-383c-47a3-80d9-dcb00067f7a3" x="79.35" y="321" width="9.11" height="9.11" rx="2.83" ry="2.83"/>
+        <circle class="02bc8de9-d67e-4d56-b4bd-546c974f4cea" cx="83.9" cy="19.39" r="2.82"/>
+        <circle class="02bc8de9-d67e-4d56-b4bd-546c974f4cea" cx="61.84" cy="32.37" r="1.42"/>
+        <line class="01201e51-383c-47a3-80d9-dcb00067f7a3" x1="70.36" y1="32.37" x2="97.45" y2="32.37"/>
+        <rect class="01201e51-383c-47a3-80d9-dcb00067f7a3" x="11.2" y="47.98" width="145.41" height="258.04"/>
+      </g>
+      <text class="0f074f5c-31dc-428a-add5-b9f1a8e1b9a6" transform="translate(18 203.6)">Server</text>
+      <text class="00bce68d-73a6-4f8a-b699-664378530561" transform="translate(104.18 203.6)">debugp<tspan class="52083e59-75a3-4a0b-96d4-fc2cc3cbb8b2" x="29.14" y="0">ro</tspan><tspan x="37.13" y="0">xy</tspan></text>
+      <text class="0f074f5c-31dc-428a-add5-b9f1a8e1b9a6" transform="translate(18 223.96)">Port</text>
+      <text class="524ef114-9290-4ba0-a68e-35dc95938f3b" transform="translate(132 223.96)">8080</text>
+      <text class="17399add-f160-4801-970c-0851ccb20968" transform="translate(18 244.31)">Authenication</text>
+      <line class="12ccc432-72de-4ebf-8f66-3c582ec4e0ba" x1="156.43" y1="211" x2="18" y2="211"/>
+      <line class="12ccc432-72de-4ebf-8f66-3c582ec4e0ba" x1="156.43" y1="230.89" x2="18" y2="230.89"/>
+      <line class="12ccc432-72de-4ebf-8f66-3c582ec4e0ba" x1="156.43" y1="250.78" x2="18" y2="250.78"/>
+      <g>
+        <path class="dad1edc7-ae5a-4fea-b572-fa004ac2e405" d="M149.85,240.84a6.89,6.89,0,0,1-6.9,6.89H133.7a6.89,6.89,0,1,1,0-13.79h9.25A6.9,6.9,0,0,1,149.85,240.84Z"/>
+        <circle class="02bc8de9-d67e-4d56-b4bd-546c974f4cea" cx="133.74" cy="240.83" r="6.31"/>
+      </g>
+      <rect class="3d25459a-ced0-45b8-9edb-13532788fd44" x="11.2" y="47.98" width="145.37" height="28.94"/>
+      <text class="994655af-20ec-4821-ace4-039fcb1c8b03" transform="translate(23.88 70.14)">Wi-Fi</text>
+      <polyline class="8c68097e-a7f9-46c4-9b7c-26ddc0c7528c" points="20.33 71.3 15.98 66.94 20.19 62.73"/>
+      <text class="5096ec11-11a6-473c-9692-0af3cb890bf0" transform="translate(64.92 70.14)"><tspan class="03680da4-b128-42f6-8ee3-388726f68d65">Y</tspan><tspan x="4.33" y="0">our Wi-Fi</tspan></text>
+      <g>
+        <line class="12ccc432-72de-4ebf-8f66-3c582ec4e0ba" x1="156.41" y1="84.49" x2="17.98" y2="84.49"/>
+        <g>
+          <rect class="02bc8de9-d67e-4d56-b4bd-546c974f4cea" x="11.01" y="142.38" width="145.76" height="25.13"/>
+          <text class="17399add-f160-4801-970c-0851ccb20968" transform="translate(17.98 134.78)">Ren<tspan class="52083e59-75a3-4a0b-96d4-fc2cc3cbb8b2" x="14.43" y="0">e</tspan><tspan x="18.87" y="0">w Lease</tspan></text>
+          <text class="17399add-f160-4801-970c-0851ccb20968" transform="translate(17.98 98.38)">Client ID</text>
+          <text class="2e4c54a2-6630-45de-b223-a8247c036c1c" transform="translate(15.62 163.65)">H<tspan class="94459830-ece5-40c8-855b-de5ffd38b2ec" x="5.19" y="0">T</tspan><tspan x="9.15" y="0">TP PR</tspan><tspan class="1532246e-0aac-40ec-ad8c-89da675bbda6" x="27.69" y="0">O</tspan><tspan x="33.08" y="0">XY</tspan></text>
+          <rect class="02bc8de9-d67e-4d56-b4bd-546c974f4cea" x="11.01" y="105.44" width="145.76" height="15.98"/>
+        </g>
+      </g>
+      <g>
+        <text class="496030cf-e63d-4100-9727-bd7e0d277ddd" transform="translate(32.3 183.27)">Off</text>
+        <text class="496030cf-e63d-4100-9727-bd7e0d277ddd" transform="translate(124.61 183.27)">Auto</text>
+        <rect class="8c68097e-a7f9-46c4-9b7c-26ddc0c7528c" x="13.48" y="174.35" width="140.85" height="13.26" rx="2.83" ry="2.83"/>
+        <rect class="c650ad3a-7e7a-4c87-9642-c6082b9d4a65" x="59.72" y="174.35" width="47.8" height="12.53"/>
+        <text class="3ab42e62-b340-43af-ac57-dcdaee81e823" transform="translate(73.4 183.74)">Manual</text>
+      </g>
+    </g>
+  </g>
+</svg>

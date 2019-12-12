@@ -1,0 +1,159 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<section class="hero">
+	<div class="step-by-step-top container slab-of-text">
+		<h1>FAQ&rsquo;s</h1>
+		<p>Answers to questions not covered in the documentation.</p>
+	</div>
+</section>
+<div class="home-body container step-by-step slab-of-text">
+
+	<h3>Can I anonymously download content through the proxy?</h3>
+  <p>
+  No. Although upstream requests will be requested from proxies IP addresses,
+  an X-Forwarded-For header with requesters IP address is appended to every
+  upstream request.
+  </p>
+
+  <h3>How does it compare to Fiddler, Charles or mitmproxy?</h3>
+  <p>
+  debugProxy is basically a hosted version of one of these. Using any one of
+  these tools you can do almost everything you can do with debugProxy and a lot
+  more.
+  </p>
+  <p>
+  As it is a hosted servive debugProxy doesn't require installing any software.
+  The user interface runs in the browser and any device on the Internet can
+  connect to the proxy.
+  </p>
+
+  <h3>Are there any limits to how many requests can be made?</h3>
+  <p>
+  Yes. To try to ensure the servers are not overloaded various rate limits are
+  enforced. Initially the proxy will respond with:
+  </p>
+  <code class="red">
+  429 Too Many Requests
+  </code>
+  <p>
+  If higher rate limites are reached, the proxy server will start simply
+  dropping connections.
+  </p>
+
+	<h3>I keep getting authentication dialogs on iOS</h3>
+  <p>
+  iOS 10 and above prompt for both HTTP and HTTPS credentials, even if you add
+  them when setting up the proxy. The username and password is the same for
+  both; the username and password generated when you create a session (not your
+  email address and password used to sign into debugProxy.com!). iOS will
+  likely continue to prompting unless the root certificate is installed and
+  trusted.
+  </p>
+  <p>
+  Unfortunatly HTTPS tunneling through a proxy with credentials doesn't work
+  correctly on iOS 9 and earlier version.
+  </p>
+
+
+  <h3>Is my traffic through the debugProxy stored forever on the debugProxy
+    servers</h3>
+  <p>
+  Request and respones data is currently only stored for 20 minutes before it
+  is permanently removed, we would like to increase this but currently only
+  have limited storage. Some system logging data is stored for a bit longer but
+  it only contains limited information about the requests themselves.
+  </p>
+
+	<h3>I'm getting errors downloading HTTPS traffic</h3>
+  <p>
+  Most probably you need to trust the debugProxy root certificate.
+  </p>
+
+  <h3>Do you intend on charging for the debugProxy?</h3>
+  <p>
+  Ideally we would like to provide a rate-lmited free tier and add a paid tier
+  for users who want to proxy more requests, use additional features, or simply
+  want to support the service.
+  </p>
+
+  <h3>Can I connect to service in my private network</h3>
+  <p>
+  No, the proxy can only connect to addresses it can reach.
+  </p>
+
+  <h3>Can I connect to a site with basic authentication?</h3>
+  <p>
+  Yes, to proxy will send almost all headers requested including the
+  Authorization header.
+  </p>
+  <p>
+  It doesn&rsquo;t forward the Proxy-Authorization header and it adds a header
+  X-Forwarded-For header.
+  </p>
+
+  <h3>Can I proxy HTTPS traffic from apps that implement certificate pinning?</h3>
+  <p>
+  No, certificate pinning prevents to use of the debugProxy root certificate.
+  It may be possible to patch the app to accept the debugProxy certificate, but
+  that is not described here.
+  </p>
+
+  <h3>The proxy is dropping connections from our company IP address</h3>
+  <p>
+  There is IP based rate limiting in place, so if you have multiple clients on
+  the network using the proxy your IP address may be temporarily blocked. If
+  this is happening, please contact us by email and we may be able to
+  white-list your IP address.
+  </p>
+
+  <h3>Does it support HTTP/2?</h3>
+  <p>
+  Yes, but only over HTTPS.
+  </p>
+
+  <h3>Does intercepting HTTPS work in Android Nougat?</h3>
+  <p>
+  Since Android Nougat apps don't use non-system root certificate by default.
+  If you want to intercept the traffic for your own apps you can enable using
+  user root certificates. You can read about this decision <a target="_blank"
+  href="https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html">here</a>. 
+  </p>
+  <p>
+  If you have root access to the phone it is also possible to install the
+  debugProxy root certificate as a system root certificate. See this <a
+  target="_blank" href="https://blog.jeroenhd.nl/article/android-7-nougat-and-certificate-authorities">blog post</a> for details.
+  </p>
+
+  <h3>My Android phone says my connections may be monitored after I install the certificate.</h3>
+  <p>
+  This is a great feature! Yes, when the certificate is installed debugProxy
+  can monitor your traffic. It is advised that you uninstall the certificate
+  when you are not using the proxy.
+  </p>
+
+  <h3>Can debugProxy be used to spy on someone</h3>
+  <p>
+  debugProxy is intended to be used to debug HTTP(S) traffic from your own
+  devices, the service is not provided for spying on anyone but yourself and
+  maybe other consenting users.
+  </p>
+  <p> 
+  We are concerned that debugProxy isn't miss used. Fortunatly setting up a
+  proxy and root certificate generally requires a passcode or root access. 
+  </p>
+  <p>
+  Additionally we implemented a feature where proxy sessions become inactive
+  after a period of inactivity and must be manually re-activated in the
+  dashboard. Unfortunatly this saftey feature is rather annoying for regular
+  users whose sessions timeout while getting a coffee. 
+  </p>
+  
+  <h3>How do I contact debugProxy</h3>
+  <p>Email us at 
+    <a href="mailto:hello@debugproxy.com" target="_top">hello@debugproxy.com</a>.
+  </p>
+
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>debugproxy</title>
+    <meta name="description" content="">
+</head>
+  <body>
+    <div id="js-main">
+      </noscript>
+    </div>
+    <% if (env.production) { %>
+      <script async src="<%= env.assets.main.js %>"></script>
+    <% } else { %>
+      <script src="http://localhost:4000/client/main.js"></script>
+    <% } %>
+  </body>
+</html>

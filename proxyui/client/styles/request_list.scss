@@ -1,0 +1,50 @@
+
+.list-container {
+  width: 100%;
+  height: 100%;
+  clear: both;
+  font-size: 14px;
+  .list-item {
+    height: 20px;
+    width: 100%;
+    padding-right: 16px;
+    .request {
+      &:hover {
+        background-color: $base02;
+        cursor: pointer;
+    }
+      &.selected {
+        background-color: $base02;
+        font-weight: 700;
+      }
+    }
+    .intercepted {
+      color: $yellow;
+    }
+    span {
+      display: inline-block;
+    }
+    span.status-code {
+      width: 10% !important;
+    }
+    span.url {
+      width:75%;
+    }
+    span.response-code {
+      width: 15%;
+      text-align: right;
+    }
+  }
+}
+
+.loading-list { /* Waiting for requests*/
+  display: inline-block;
+  clear: both;
+  width: 100%;
+  height: 100%;
+}
+.ReactVirtualized__Grid {
+  &:focus {
+    outline: none;
+  }
+}

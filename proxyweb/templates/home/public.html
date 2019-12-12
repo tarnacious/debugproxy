@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>debugProxy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/app/normalize.css">
+  {% assets "homepage_css" %}
+  <link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />
+  {% endassets %}
+  <link rel="icon" type="image/png" href="/static/img/debugProxy_favicon2.png" sizes="32x32">
+  <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@debug_Proxy" />
+    <meta name="twitter:creator" content="@debug_Proxy" />
+    <meta name="twitter:title" content="debugProxy | Network debugging from your browser" />
+    <meta name="twitter:description" content="debugProxy is a HTTP/S proxy server with a web interface to view, pause & modify the traffic through the proxy." />
+    <meta name="twitter:image" content="https://debugproxy.com/static/img/TwitterCard_512x512.jpg" />
+
+    <meta property="og:url" content="https://debugproxy.com/" />
+    <meta property="og:title" content="debugProxy | Network debugging from your browser" />
+    <meta property="og:description" content="debugProxy is a HTTP/S proxy server with a web interface to view, pause & modify the traffic through the proxy." />
+    <meta property="og:image" content="https://debugproxy.com/static/img/TwitterCard_512x512.jpg" />
+</head>
+<body>
+
+
+	{% block flash_messages %}
+        {%- with messages = get_flashed_messages(with_categories=true) -%}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category=='error' %}
+                        {% set category='danger' %}
+                    {% endif %}
+                    <div id="hide-me" class="alert alert-{{category}}">
+                        <div>{{ message|safe }}</div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {%- endwith %}
+    {% endblock %}
+	<section class="hero">
+		{% include "common/_navigation.html" %}
+		<div class="container">
+			<h1 class="hero__title">debugProxy</h1>
+			<h2 class="hero__subtitle">&gt; Network debugging from your browser<span class="blinking-cursor">_</span></h2>
+			<p class="hero__text">
+        debugProxy is a HTTP/S proxy server with a web interface to
+        <span class="violet">view</span>,
+        <span class="violet">pause</span> &amp;
+        <span class="violet">modify</span>
+        the traffic through the proxy.
+      </p>
+			<div class="button-container">
+        <a onclick="javascript:_paq.push(['trackEvent', 'Reg', 'large']);" class="call-to-action" href="{{ url_for('login.register') }}">Try it now</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="authentication" class="authentication-section">
+
+		<div class="container">
+			<div class="authentication-half">
+				<div class="authentication-half__text">
+					<h3 class="title">Sign In</h3>
+            <p>If you don't have an account yet you can <a onclick="javascript:_paq.push(['trackEvent', 'Reg', 'small']);" class="link-on-light" href="{{ url_for('login.register') }}" href="">create one</a> now.
+            </p>
+            <p>
+              Registered but forgotten your password?
+              You can recover it
+              <a class="link-on-light" href="{{ url_for('login.forgot_password') }}" tabindex='195'>
+                  here</a>.
+            </p>
+				</div>
+				<div class="authentication-half__form">
+					{% include "login/_login.html" %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="content">
+		 <div class="overview">
+		 		<div class="container slab-of-text">
+		 			<h2>A little bit about debugProxy</h2>
+	        <p>
+            debugProxy is a HTTP/S hosted proxy server that lets you interact
+            with the traffic passing through it, using a web based dashboard.
+          <p>
+	        <p>
+            This means, for example, you can use the browser on your desktop or
+            tablet to view the traffic being sent from apps on your mobile
+            phone to the Internet.
+	        </p>
+	        <p>
+	          debugProxy can intercept HTTPS and HTTP2 traffic by acting as a
+	          Certificate Authority and issuing certificates on-the-fly.
+	        </p>
+          <p>
+            For a quick demostration there are
+            <a target="_blank" href="https://www.youtube.com/watch?v=RxlvvuJv1sg">some videos</a>.
+            Below is a is a screen shot of the web dashboard.
+          </p>
+          <img class="screenshot" src="/static/img/debugTechBikers.png" alt="dashboard screenshot">
+          <p>
+          It's free to <a href="/account/register">register</a> and start a proxy server.
+          </a>
+
+          </p>
+        </div>
+      </div>
+    </div>
+	</section>
+
+	{% include "common/_footer.html" %}
+
+	<script>
+		function responsiveNav() {
+	    var x = document.getElementById("myTopnav");
+	    if (x.className === "topnav") {
+	        x.className += " responsive";
+	    } else {
+	        x.className = "topnav";
+	    }
+	  }
+	  function closeBeta() {
+      var x = document.getElementById("beta");
+
+      var d = new Date();
+      d.setTime(d.getTime() + (2000*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+
+      x.style.display = "none";
+      document.cookie = "beta=closed;" + expires + ";path=/";
+		}
+		function closePrivacy() {
+      var x = document.getElementById("privacy");
+      var beta = document.getElementById("beta");
+      var d = new Date();
+      d.setTime(d.getTime() + (2000*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+
+      x.style.display = "none";
+      document.cookie = "privacy=closed;" + expires + ";path=/";
+      beta.classList.add("closed-cookies-still-beta");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+.connection-info {
+    height: 28px;
+    background-color: $base02;
+    padding: 3px 0px;
+
+    .connection-wrapper {
+        @include margins
+        font-size: 12px;
+
+        .connection-split { /* child 'connection-info-button' in connection_info.scss */
+            display: inline-block;
+            position: relative;
+            float: left;
+            width: 50%;
+            margin-top: 2px;
+        }
+        .connection-split-right {
+            display: inline-block;
+            float: right;
+            width: 10%;
+            text-align: right;
+        }
+
+        .websocket-details {
+          position: relative;
+          margin-top: 4px;
+
+          .connected {
+              color: $green;
+          }
+          .not-connected {
+              color: $red;
+          }
+        }
+
+        .proxy-details {
+          position: relative;
+          display: inline-block;
+
+          .username {
+            color: $cyan;
+          }
+          .password {
+            color: $blue;
+          }
+          .server {
+            color: $yellow;
+          }
+          .port {
+            color: $magenta;
+          }
+        }
+
+
+        span {
+            font-family: 'Inconsolata', monospace;
+            font-size: 16px;
+        }
+    }
+}

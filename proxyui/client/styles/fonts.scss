@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Inconsolata';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/static/fonts/Inconsolata-regular/inconsolata-regular.eot');
+  src: url('/static/fonts/Inconsolata-regular/inconsolata-regular.eot?#iefix') format('embedded-opentype'),
+       local('Inconsolator-regular'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.woff2') format('woff2'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.woff') format('woff'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.ttf') format('truetype'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.svg#Inconsolata') format('svg');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-weight: 700;
+  font-style: bold;
+  src: url('/static/fonts/Inconsolata-bold/inconsolata-bold.eot');
+  src: url('/static/fonts/Inconsolata-bold/inconsolata-bold.eot?#iefix') format('embedded-opentype'),
+       local('Inconsolator-bold'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.woff2') format('woff2'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.woff') format('woff'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.ttf') format('truetype'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.svg#Inconsolata') format('svg');
+}

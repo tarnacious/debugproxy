@@ -1,0 +1,273 @@
+.request-detail {
+  flex: none;
+  display: inline-block;
+  position: relative;
+  float: right;
+  width: 49.75%;
+  height: calc( 100vh - 67px - 106px - 3em);
+  min-height: 400px;
+  border: 1px solid $base02;
+
+  .error {
+      color: $red;
+  }
+
+  .tabs {
+    position: relative;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        width: calc(100% / 3);
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+      }
+      #overview-tab {
+        @include link-buttons;
+        color: $base1;
+        border-color: $base03;
+        background: $base02;
+        padding-left: 14px; /* aligns with content of panel */
+        &:hover {
+           border-color: $base01;
+        }
+        &.active {
+          background: $base03;
+          border: 1px solid $base02;
+          border-bottom: 1px solid transparent;
+          margin-bottom: calc(1em - 4px); /* Stops jank of elements below */
+        }
+        &.error {
+          color: $red;
+        }
+
+      }
+      #request-tab {
+        @include link-buttons;
+        color: $base1;
+        border-color: $base03;
+        background: $base02;
+        &:hover {
+          color: $green;
+          border-color: $green;
+        }
+        &.active {
+          color: $green;
+          background: $base03;
+          border: 1px solid $base02;
+          border-bottom: 1px solid transparent;
+          margin-bottom: calc(1em - 4px); /* Stops jank of elements below */
+        }
+      }
+      #response-tab {
+        @include link-buttons;
+        color: base1;
+        border-color: $base03;
+        background: $base02;
+        &:hover {
+          color: $violet;
+          border-color: $violet;
+        }
+        &.active {
+          color: $violet;
+          background: $base03;
+          border: 1px solid $base02;
+          border-bottom: 1px solid transparent;
+          margin-bottom: calc(1em - 4px); /* Stops jank of elements below */
+        }
+      }
+    }
+  }
+
+  .panel {
+    overflow-y: auto;
+    height: calc(100% - 35px - 31px);
+    clear: both;
+    padding: 1em;
+    color: $base1;
+    font-size: 14px;
+    line-height: 20px;
+
+    textarea { /* space for buttons after textarea */
+      margin-bottom: 10px;
+    }
+
+    pre {
+      /* code for request/response data*/
+    }
+  }
+  .overview {
+      /* overflow: scroll; Pushed panel content off screen */
+
+    .method {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .request-overview { /* Overview URL */
+      font-weight: bold;
+      color: $base1;
+      &:hover {
+        cursor: pointer;
+        color: $base2;
+      }
+      .url {
+        /* I really want this to break on any character, like on a terminal */
+        word-wrap: break-word;
+      }
+    }
+  }
+  .overview-inputs {
+
+    input {
+      @include inputBox
+      @include fadeIn
+      width: 100%;
+      margin-bottom: .2em;
+    }
+    .last-overview-input {
+      margin-bottom: 10px;
+    }
+  }
+
+  .panel {
+    .headers {
+      .headers {
+        .header-detail-container {
+          clear: both;
+          &:hover {
+            cursor: pointer;
+            background-color: $base02;
+          }
+          span.header-name { /*request header-name*/
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+  .panel>div {
+      /* overflow: auto; Pushed panel content off screen */
+  }
+  .headers {
+    .header-name { /* Request and Response tab */
+      font-weight: bold;
+    }
+    .header-value {
+      &:hover {
+        color: $base2;
+      }
+    }
+
+    .header-delete {
+      float: right;
+      color: $red;
+      .show {
+        @include buttons-nav-edit
+        height: 20px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        color: $red;
+        transition: opacity 1.0s linear;
+        opacity: 1;
+
+        &:hover {
+          color: lighten( $red, 5% );
+          border-color: $red;
+        }
+      }
+      .hide {
+        opacity: 0;
+      }
+    }
+  }
+
+  .response {
+    .status-code {
+      &:hover {
+        cursor: pointer;
+        color: $base2;
+        background-color: $base02;
+      }
+      span {
+        color: $violet;
+        font-weight: bold;
+      }
+      input {
+        @include inputBox
+        width: 20%;
+        padding: .2em;
+      }
+      .status-code-buttons-container {
+        width: 60%;
+        margin-bottom: .5em;
+      }
+    }
+    .no-hover:hover { /* selected status code */
+      background-color: $base03;
+     }
+    .headers {
+
+      .headers {
+        .header-detail-container {
+
+          &:hover {
+            cursor: pointer;
+            background-color: $base02;
+          }
+          .header-name { /* Response tab */
+              font-weight: bold;
+              color: $violet !important;
+          }
+        }
+      }
+    }
+
+    .header-inputs-wrapper { /* onClick editable header */
+      @include fadeIn
+
+      .header-name-wrapper {
+
+        input.header-name { /* Header Name Input Area */
+          @include inputBox
+          color: $green;
+          width: 100%;
+          margin-top: 1em;
+        }
+      }
+
+      .header-value-wrapper {
+
+        textarea.header-value { /* Header Value Text Area */
+          @include inputBox
+          margin-top: .5em;
+          margin-bottom: -12px; /* slims margin to buttons below it */
+          width: 100%;
+        }
+      }
+    }
+    .response {
+      .header-inputs-wrapper {
+        .header-name-wrapper {
+          input.header-name { /* Edit response header */
+            color: $violet;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    button { /* edit Header buttons */
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+}
+.loading-detail { /* No request selected */
+  padding: 1em;
+  display: inline-block;
+  float: right;
+  width: 49.75%;
+  border-top: 1px solid $base02;
+}
