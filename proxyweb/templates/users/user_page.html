@@ -1,0 +1,15 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<h1>User page</h1>
+
+<div>
+<a href="{{ url_for('user.profile') }}">Profile</a> 
+</div>
+<div>
+<a href="{{ url_for('user.change_password') }}">Change Password</a> 
+</div>
+
+<p>This page is accessible to authenticated user (users that have signed in).</p>
+
+{% endblock %}

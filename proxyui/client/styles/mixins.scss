@@ -1,0 +1,173 @@
+@mixin title-robo {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+}
+@mixin mono-space {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 400;
+}
+@mixin san-serif {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+}
+
+@mixin margins {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+@mixin linearGradient($top, $bottom){
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+}
+@mixin link-buttons {
+  float: left;
+  display: block;
+  text-decoration: none;
+  color: $base1;
+  background: none;
+  margin: 1em 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid $magenta;
+  border-left: none;
+  padding: .5em; /* hover bottom border filler */
+
+  &:hover {
+    margin-bottom: calc(1em - 4px); /* Stops jank of elements below */
+    border-bottom: 5px solid $magenta;
+    padding-bottom: .5em;
+    color: $base1;
+    background: $base02;
+    cursor: pointer;
+  }
+}
+@mixin buttons-nav-edit {
+  min-width: 80px;
+  color: $base0;
+  border: 1px solid $base02;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #002129 !important;
+  background-color: $base03;
+  background: rgba(7,54,66,1);
+
+  @include linearGradient($base02, $base03);
+
+  padding: .75em .75em;
+  font-family: 'Inconsolata', monospace;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  @content;
+  &:hover {
+    @content;
+  }
+}
+
+
+@mixin fadeIn {
+	@content;
+  -webkit-animation: fadeIn .5s;
+  animation: fadeIn .5s;
+
+	@-webkit-keyframes fadeIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+  }
+  @keyframes fadeIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+  }
+}
+
+@mixin inputBox {
+	@content;
+	color: $base0;
+	padding: .25em;
+  background-color: $base03;
+  border: 1px solid $base02;
+  border-radius: 5px;
+  font-size: 1em;
+
+  &:focus {
+  	outline: none;
+  	border: 1px solid $base01;
+    background-color: $base02;
+  }
+}
+
+@mixin tabs {
+  @content;
+  text-decoration: none;
+  &:hover {
+    color: $base03;
+  }
+  &.active {
+    background: $base03;
+    border-bottom: none;
+  }
+}
+
+@mixin reveal {
+  @content;
+  -webkit-animation: reveal .25s;
+  animation: reveal .25s;
+
+  @-webkit-keyframes reveal {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0.1;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes reveal {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0.1;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin grow { /* Potentially obsolete, SVG docs diagrams */
+  -webkit-transition-property: width;
+     -moz-transition-property: width;
+       -o-transition-property: width;
+          transition-property: width;
+  -webkit-transition-duration: .25s;
+     -moz-transition-duration: .25s;
+       -o-transition-duration: .25s;
+          transition-duration: .25s;
+  -webkit-transition-timing-function: linear;
+     -moz-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+}

@@ -1,0 +1,22 @@
+{% extends "common/page_base.html" %}
+
+{% block content %}
+<p>Back to all <a href="{{ url_for('organizations.organizations') }}">organizations</a></p>
+
+{% from "common/form_macros.html" import render_field, render_submit_field %}
+<form action="" method="POST" class="form" role="form">
+  <div class="outer-form-container">
+    <div class="form-container">
+    <h1>Create Organization</h1>
+
+    {{ form.hidden_tag() }}
+
+    {{ render_field(form.name, tabindex=240) }}
+
+    {{ render_submit_field(form.submit, tabindex=280) }}
+    </div>
+  </div>
+</form>
+
+{% endblock %}
+

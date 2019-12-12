@@ -1,0 +1,147 @@
+.intercept-progress {
+  @include margins;
+  display: inline-block;
+  padding: .5em 0;
+	position: relative;
+  margin-top: .75em;
+  margin-bottom: .75em;
+  width: 100%;
+  min-height: 64px;
+  border: 1px solid $base02;
+
+
+	.intercepts {
+		display: inline-block;
+		float: left;
+		width: 50%;
+		min-height: 64px;
+
+		.intercept-button-container {
+			width: 12%;
+			height: 100%;
+			margin-bottom: auto;
+			margin-top: auto;
+			padding-left: .5em;
+			display: inline-block;
+			float: left;
+
+			.intercept-button {
+        color: $yellow;
+        background-color: $base02;
+        height: 52px;
+        width: 52px;
+        font-size: .75em;
+        font-family: 'Inconsolata', monospace;
+        line-height: 26px;
+        border-radius: 3em;
+        border: none;
+        box-shadow: 1px 1px 3px #002129;
+				background-color: $base02;
+				margin: 6px .5em auto 0px;
+				@include linearGradient($base02, $base03);
+				fill: $yellow; /* svg */
+
+				&:hover {
+					background: $yellow !important;
+					fill:$base03; /* svg */
+					cursor: pointer;
+				}
+				svg {
+					vertical-align: middle;
+					&:hover {
+
+					}
+				}
+			}
+		}
+
+		.edit-intercept-container {
+
+			input {
+				@include fadeIn
+
+				@include inputBox
+				margin-bottom: .25em;
+				margin-top: -10px;
+				margin-right: 2%;
+				margin-left: .5em;
+				width: 30%;
+			}
+			button.yellow-intercept, button.green-intercept, button.red-intercept {
+				@include fadeIn
+				@include link-buttons;
+				float: none;
+				display: inline-block;
+				margin: 0;
+				font-size: 14px;
+				&:hover {
+			    margin-bottom: calc(0em - 4px); /* Stops jank of elements below */
+			  }
+			}
+			button.green-intercept {
+				border-color: $green;
+				&:hover {
+					border-color: $green;
+				}
+			}
+			button.yellow-intercept {
+				border-color: $yellow;
+				&:hover {
+					border-color: $yellow;
+				}
+			}
+			button.red-intercept {
+				border-color: $red;
+				&:hover {
+					border-color: $red;
+				}
+			}
+		}
+    .intercept-items {
+    	display: inline-block;
+    	width: 88%;
+    	margin-bottom: -.5em; /* Offsets margin-bottom on items on 2nd row */
+
+    	div {
+    		display: inline-block;
+    		float: left;
+			}
+			.intercept-container {
+				display: inline-block;
+				margin-top: 6px;
+				margin-right: .75em;
+				margin-left: .5em;
+				background-color: $base02;
+	      border-radius: 5px 5px 5px 5px;
+	      box-shadow: 1px 1px 3px #002129;
+	      @include linearGradient($base02, $base03);
+
+				&:hover {
+					cursor: pointer;
+				}
+
+	      .intercept-item-name {
+	      	font-size: 12px;
+	      	color: $yellow;
+	      	border-radius: 5px 0px 0px 5px;
+	        padding: 5px 10px;
+	        &:hover {
+						background: $yellow;
+						color: $base03;
+					}
+				}
+				.inline-delete {
+	      	border-radius: 0px 5px 5px 0px;
+	      	border-left: 1px solid $base03;
+					padding: 5px 10px;
+					color: $red;
+					font-size: 12px;
+					&:hover {
+						color:$base03;
+						background: $red;
+					}
+				}
+			}
+		}
+	}
+}

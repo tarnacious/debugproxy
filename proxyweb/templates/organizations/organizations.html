@@ -1,0 +1,37 @@
+{% extends "common/page_base.html" %}
+
+{% block content %}
+<div class="home">
+  <div class="home-band">
+
+  </div>
+</div>
+<div class="org-body-container">
+  <h1>Organizations</h1>
+
+  <p>
+  <a href="{{ url_for('organizations.create_organization') }}">Create Organization</a>
+  </p>
+
+  <table class="table">
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+    {% for organization in organizations %}
+    <tr>
+      <td>
+      {{ organization.name }}
+      </td>
+      <td>
+        <a href="{{ url_for('organizations.organization', organization_id=organization.id) }}">Details</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

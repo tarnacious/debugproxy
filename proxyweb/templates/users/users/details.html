@@ -1,0 +1,37 @@
+{% extends "common/page_base.html" %}
+
+{% block content %}
+<div class="home">
+  <div class="home-band">
+
+  </div>
+</div>
+	<div class="outer-form-container">
+		<div class="form-container">
+		<h2>User Details</h2>
+
+		<label>Name</label>
+		<div class="user-details">{{ user.first_name }} &nbsp; {{ user.last_name }}</div>
+
+		<label>Email</label>
+		<div class="user-details">{{ user.email }} </div>
+
+		<label>Confirmed at</label>
+		<div class="user-details">{{ user.confirmed_at }} </div>
+
+
+		<form action="{{ url_for('users.invite_user', user_id=user.id) }}"
+		      method="post">
+		    <input name=_csrf_token type=hidden value="{{ csrf_token() }}">
+		    <input type="submit" value="Send Email Invitation" />
+		</form>
+		<p class="back-to-org">Back to
+		  <a href="{{ url_for('organizations.organization', organization_id = organization.id) }}">
+		    {{ organization.name }}
+		  </a>
+		</p>
+		</div>
+	</div>
+
+{% endblock %}
+

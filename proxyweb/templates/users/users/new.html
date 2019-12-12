@@ -1,0 +1,35 @@
+{% extends "common/page_base.html" %}
+
+{% block content %}
+<div class="home">
+  <div class="home-band">
+
+  </div>
+</div>
+{% from "common/form_macros.html" import render_field, render_submit_field %}
+<form action="" method="POST" class="form" role="form">
+  <div class="outer-form-container">
+    <div class="form-container">
+
+    <h2>Create User</h2>
+
+      <div class="form-body">
+      {{ form.hidden_tag() }}
+
+      {{ render_field(form.first_name, tabindex=240) }}
+      {{ render_field(form.last_name, tabindex=250) }}
+      {{ render_field(form.email, tabindex=260) }}
+
+      {{ render_submit_field(form.submit, tabindex=280) }}
+      </div>
+      <p class="back-to-org">Back to
+        <a href="{{ url_for('organizations.organization', organization_id = organization.id) }}">
+          {{ organization.name }}
+        </a>
+      </p>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
+

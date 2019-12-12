@@ -1,0 +1,35 @@
+{% extends 'flask_user/public_base.html' %}
+
+{% block content %}
+{% from "flask_user/_macros.html" import render_field, render_submit_field %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<form action="" method="POST" class="form register-form" role="form">
+
+			<h2>Create an Account</h2>
+      <p>
+      An email with a link to activate your account will be sent to the email
+      address.
+      </p>
+			<div class="form-body">
+		    {{ form.hidden_tag() }}
+		    {{ render_field(form.email, tabindex=10) }}
+
+        <div class="form-group {% if form.captcha.errors %}has-error{% endif %}">
+          <div class="g-recaptcha"
+               data-sitekey="6LfQJDAUAAAAAMQ_2QYNTx8hXB4jAjiS-4m5LxJj"></div>
+          {% if form.captcha.errors %}
+              {% for e in form.captcha.errors %}
+                  <p class="help-block">{{ e }}</p>
+              {% endfor %}
+          {% endif %}
+          </div>
+		    {{ render_submit_field(form.submit, tabindex=90) }}
+      </div>
+      <p> 
+      The email address is only used for creating an account and recovering
+      passwords.
+      </p>
+</form>
+
+{% endblock %}

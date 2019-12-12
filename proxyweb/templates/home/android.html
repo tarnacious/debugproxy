@@ -1,0 +1,483 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<section class="hero">
+	<div class="step-by-step-top container">
+		<h1>Android Proxy Configuration</h1>
+		<p>To configure your Android proxy server you have to connect through a Wi-Fi connection.</p>
+	</div>
+</section>
+<div class="home-body container step-by-step">
+  <p>On Android systems apps must opt-in to using the system HTTP proxy, this
+  means the traffic for some apps will not be intercepted by debugProxy.<p>
+
+  <p>To browse HTTPS traffic, the <a href="{{ url_for('home.certificates')
+  }}">debugProxy certificate</a> needs to be downloaded and installed on the
+device.  </p>
+
+  <p>
+  On Android Nougat apps will not use non-system certificates by default, see
+  the <a href="/faq">FAQ</a> for more details.
+  </p>
+
+	<div class="ss-container">
+		<div class="step">
+			<h2>Step 1</h2>
+			<p>Go to your <span class="blue">WiFi settings</span>.</p>
+			<p>Press and hold down on the WiFi connection you want to set-up, until a menu appears</p>
+		</div>
+		<div class="svg-container">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 184.2 368.5" style="enable-background:new 0 0 184.2 368.5;" xml:space="preserve">
+			<style type="text/css">
+				.st0{fill:none;stroke:#657B83;stroke-miterlimit:10;}
+				.st1{fill:none;stroke:#657B83;stroke-width:2;stroke-miterlimit:10;}
+				.st2{fill:none;}
+				.st3{fill:#839496;}
+				.st4{font-family:'NotoSans';}
+				.st5{font-size:9.1041px;}
+				.st6{fill:#268BD2;}
+				.st7{font-size:6.9365px;}
+				.st8{fill:#073642;}
+				.st9{fill:#93A1A1;}
+				.st10{fill:#586E75;}
+				.st11{font-size:5.6359px;}
+				.st12{fill:none;stroke:#586E75;stroke-miterlimit:10;}
+				.st13{fill:none;stroke:#073642;stroke-miterlimit:10;}
+			</style>
+			<g id="SS1">
+				<rect x="14" y="42.7" class="st0" width="156.1" height="10.6"/>
+				<rect x="14" y="53.3" class="st0" width="156.1" height="23.9"/>
+				<line class="st1" x1="14" y1="135.3" x2="170.1" y2="135.3"/>
+				<g id="wifi1">
+					<rect x="19.6" y="61.7" class="st2" width="24.5" height="8.5"/>
+					<text transform="matrix(1 0 0 1 19.5854 68.5996)" class="st3 st4 st5">Wi–Fi</text>
+					<rect x="19.6" y="146.7" class="st2" width="99.1" height="5.7"/>
+					<text transform="matrix(1 0 0 1 19.5854 151.9678)" class="st6 st4 st7">Wi–Fi networks</text>
+				</g>
+				<g id="menu1">
+					<rect x="14" y="160.5" class="st8" width="156.1" height="34.6"/>
+					<rect x="47.5" y="169.3" class="st2" width="99.1" height="8.5"/>
+					<text transform="matrix(1 0 0 1 47.4761 176.2207)"><tspan x="0" y="0" class="st6 st4 st5">Y</tspan><tspan x="4.9" y="0" class="st6 st4 st5">our Wi–Fi Connection</tspan></text>
+					<rect x="47.5" y="181.4" class="st2" width="99.1" height="5.7"/>
+					<text transform="matrix(1 0 0 1 47.4761 186.6655)" class="st9 st4 st7">Connected</text>
+					<g id="wfi-signal">
+						<path class="st6" d="M35.1,172.5c-2-2-4.7-3.2-7.7-3.2c-3,0-5.7,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+							l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.1-0.1,0.2-0.2,0.2-0.4
+							C35.3,172.7,35.2,172.6,35.1,172.5L35.1,172.5z M35.1,172.5"/>
+						<path class="st6" d="M27.4,174.1c-1.7,0-3.1,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+							c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8C30.6,174.8,29.1,174.1,27.4,174.1
+							L27.4,174.1z M27.4,174.1"/>
+						<path class="st6" d="M28.7,180.2c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+							C28.1,179,28.7,179.5,28.7,180.2L28.7,180.2z M28.7,180.2"/>
+					</g>
+				</g>
+				<g id="smart1">
+					<rect x="19.6" y="87.9" class="st2" width="99.1" height="8.5"/>
+					<text transform="matrix(1 0 0 1 19.5854 94.8442)" class="st10 st4 st5">Smart network switch</text>
+					<rect x="19.6" y="99.2" class="st2" width="127" height="27.9"/>
+					<text transform="matrix(1 0 0 1 19.5854 103.4902)"><tspan x="0" y="0" class="st9 st4 st11">Humbleb</tspan><tspan x="24.5" y="0" class="st9 st4 st11">r</tspan><tspan x="26.8" y="0" class="st9 st4 st11">ag four lo</tspan><tspan x="52.4" y="0" class="st9 st4 st11">k</tspan><tspan x="55.3" y="0" class="st9 st4 st11">o </tspan><tspan x="60.2" y="0" class="st9 st4 st11">e</tspan><tspan x="63.3" y="0" class="st9 st4 st11">veryday carry, </tspan><tspan x="0" y="6.8" class="st9 st4 st11">williamsbu</tspan><tspan x="28.3" y="6.8" class="st9 st4 st11">r</tspan><tspan x="30.6" y="6.8" class="st9 st4 st11">g prism banh mi culpa listicle small </tspan><tspan x="0" y="13.5" class="st9 st4 st11">batch. Ramps mic</tspan><tspan x="46.8" y="13.5" class="st9 st4 st11">r</tspan><tspan x="49.1" y="13.5" class="st9 st4 st11">odosing knausgaa</tspan><tspan x="97.6" y="13.5" class="st9 st4 st11">r</tspan><tspan x="99.9" y="13.5" class="st9 st4 st11">d </tspan><tspan x="0" y="20.3" class="st9 st4 st11">cupidatat glossier n</tspan><tspan x="52.1" y="20.3" class="st9 st4 st11">e</tspan><tspan x="55.2" y="20.3" class="st9 st4 st11">xt l</tspan><tspan x="63.1" y="20.3" class="st9 st4 st11">e</tspan><tspan x="66.2" y="20.3" class="st9 st4 st11">vel. Pinte</tspan><tspan x="90.3" y="20.3" class="st9 st4 st11">r</tspan><tspan x="92.5" y="20.3" class="st9 st4 st11">est fo</tspan><tspan x="107.3" y="20.3" class="st9 st4 st11">r</tspan><tspan x="109.5" y="20.3" class="st9 st4 st11">age.</tspan></text>
+				</g>
+				<g id="random1">
+					<rect x="47.5" y="204" class="st2" width="99.1" height="8.5"/>
+					<text transform="matrix(1 0 0 1 47.4761 210.9189)" class="st10 st4 st5">Random Wi–Fi</text>
+					<rect x="47.5" y="216.1" class="st2" width="99.1" height="5.7"/>
+					<text transform="matrix(1 0 0 1 47.4761 221.3643)"><tspan x="0" y="0" class="st9 st4 st7">Secu</tspan><tspan x="15.3" y="0" class="st9 st4 st7">r</tspan><tspan x="18.1" y="0" class="st9 st4 st7">ed</tspan></text>
+					<path class="st10" d="M35.1,207.2c-2-2-4.7-3.2-7.7-3.2c-3,0-5.7,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+						l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.1-0.1,0.2-0.2,0.2-0.4
+						C35.3,207.4,35.2,207.3,35.1,207.2L35.1,207.2z M35.1,207.2"/>
+					<path class="st10" d="M27.4,208.8c-1.7,0-3.1,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+						c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8C30.6,209.5,29.1,208.8,27.4,208.8
+						L27.4,208.8z M27.4,208.8"/>
+					<path class="st10" d="M28.7,214.9c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+						C28.1,213.7,28.7,214.2,28.7,214.9L28.7,214.9z M28.7,214.9"/>
+					<g>
+						<rect x="47.5" y="237.7" class="st2" width="99.1" height="8.5"/>
+						<text transform="matrix(1 0 0 1 47.4761 244.6357)" class="st10 st4 st5">Random Wi–Fi</text>
+						<rect x="47.5" y="249.8" class="st2" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 47.4761 255.0801)"><tspan x="0" y="0" class="st9 st4 st7">Secu</tspan><tspan x="15.3" y="0" class="st9 st4 st7">r</tspan><tspan x="18.1" y="0" class="st9 st4 st7">ed</tspan></text>
+						<g>
+							<path class="st10" d="M35.1,240.9c-2-2-4.7-3.2-7.7-3.2c-3,0-5.7,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+								l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8
+								c0.1-0.1,0.2-0.2,0.2-0.4C35.3,241.2,35.2,241,35.1,240.9L35.1,240.9z M35.1,240.9"/>
+							<path class="st10" d="M27.4,242.6c-1.7,0-3.1,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+								c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8C30.6,243.2,29.1,242.6,27.4,242.6
+								L27.4,242.6z M27.4,242.6"/>
+							<path class="st10" d="M28.7,248.6c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+								C28.1,247.4,28.7,247.9,28.7,248.6L28.7,248.6z M28.7,248.6"/>
+						</g>
+					</g>
+					<g>
+						<rect x="47.5" y="271.6" class="st2" width="99.1" height="8.5"/>
+						<text transform="matrix(1 0 0 1 47.4761 278.5127)" class="st10 st4 st5">Random Wi–Fi</text>
+						<rect x="47.5" y="283.7" class="st2" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 47.4761 288.957)"><tspan x="0" y="0" class="st9 st4 st7">Secu</tspan><tspan x="15.3" y="0" class="st9 st4 st7">r</tspan><tspan x="18.1" y="0" class="st9 st4 st7">ed</tspan></text>
+						<g>
+							<path class="st10" d="M35.1,274.8c-2-2-4.7-3.2-7.7-3.2c-3,0-5.7,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+								l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8
+								c0.1-0.1,0.2-0.2,0.2-0.4C35.3,275,35.2,274.9,35.1,274.8L35.1,274.8z M35.1,274.8"/>
+							<path class="st10" d="M27.4,276.4c-1.7,0-3.1,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+								c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8C30.6,277.1,29.1,276.4,27.4,276.4
+								L27.4,276.4z M27.4,276.4"/>
+							<path class="st10" d="M28.7,282.5c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+								C28.1,281.3,28.7,281.8,28.7,282.5L28.7,282.5z M28.7,282.5"/>
+						</g>
+					</g>
+					<g>
+						<rect x="47.5" y="303.3" class="st2" width="99.1" height="8.5"/>
+						<text transform="matrix(1 0 0 1 47.4761 310.2471)" class="st10 st4 st5">Random Wi–Fi</text>
+						<rect x="47.5" y="315.4" class="st2" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 47.4761 320.6914)"><tspan x="0" y="0" class="st9 st4 st7">Secu</tspan><tspan x="15.3" y="0" class="st9 st4 st7">r</tspan><tspan x="18.1" y="0" class="st9 st4 st7">ed</tspan></text>
+						<g>
+							<path class="st10" d="M35.1,306.5c-2-2-4.7-3.2-7.7-3.2c-3,0-5.7,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+								l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8
+								c0.1-0.1,0.2-0.2,0.2-0.4C35.3,306.8,35.2,306.6,35.1,306.5L35.1,306.5z M35.1,306.5"/>
+							<path class="st10" d="M27.4,308.2c-1.7,0-3.1,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+								c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8C30.6,308.8,29.1,308.2,27.4,308.2
+								L27.4,308.2z M27.4,308.2"/>
+							<path class="st10" d="M28.7,314.2c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+								C28.1,313,28.7,313.5,28.7,314.2L28.7,314.2z M28.7,314.2"/>
+						</g>
+					</g>
+				</g>
+				<rect id="square1" x="151.8" y="101.8" class="st12" width="8.4" height="8.4"/>
+				<circle id="circle1" class="st12" cx="138.4" cy="65.4" r="4.4"/>
+				<g id="_x33_c1">
+					<circle class="st10" cx="159.7" cy="62.7" r="0.9"/>
+					<circle class="st10" cx="159.7" cy="65.4" r="0.9"/>
+					<circle class="st10" cx="159.7" cy="67.9" r="0.9"/>
+				</g>
+			</g>
+			<g id="Phone1">
+				<rect id="screen1" x="14.2" y="42.5" class="st13" width="155.9" height="283.5"/>
+				<path id="case1" class="st12" d="M172.2,368.5H12c-6.6,0-12-5.4-12-12V12C0,5.4,5.4,0,12,0h160.2c6.6,0,12,5.4,12,12v344.5
+					C184.2,363.1,178.9,368.5,172.2,368.5z"/>
+				<path id="offset1" class="st13" d="M12,362.8c-3.5,0-6.3-2.8-6.3-6.3V12c0-3.5,2.8-6.3,6.3-6.3h160.2c3.5,0,6.3,2.8,6.3,6.3v344.5
+					c0,3.5-2.8,6.3-6.3,6.3H12z"/>
+				<path id="top1" class="st13" d="M116.2,16.9H68c-1.3,0-2.4-1.1-2.4-2.4v0c0-1.3,1.1-2.4,2.4-2.4h48.2c1.3,0,2.4,1.1,2.4,2.4v0
+					C118.6,15.8,117.5,16.9,116.2,16.9z"/>
+				<path id="button1" class="st13" d="M117.4,354.7H66.9c-4.4,0-7.9-3.6-7.9-7.9v0c0-4.4,3.6-7.9,7.9-7.9h50.5c4.4,0,7.9,3.6,7.9,7.9
+					v0C125.3,351.1,121.8,354.7,117.4,354.7z"/>
+			</g>
+			</svg>
+		</div>
+	</div>
+	<div class="ss-container right">
+		<div class="step">
+			<h2>Step 2</h2>
+			<p>Select &lsquo;<span class="green">Modify network config.</span>&rsquo;</p>
+		</div>
+		<div class="svg-container">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 184.2 368.5" style="enable-background:new 0 0 184.2 368.5;" xml:space="preserve">
+			<style type="text/css">
+				.two-st0{fill:none;stroke:#073642;stroke-miterlimit:10;}
+				.two-st1{fill:none;stroke:#073642;stroke-width:2;stroke-miterlimit:10;}
+				.two-st2{fill:none;}
+				.two-st3{fill:#073642;}
+				.two-st4{font-family:'NotoSans';}
+				.two-st5{font-size:9.1262px;}
+				.two-st6{font-size:5.6495px;}
+				.two-st7{fill:#268BD2;}
+				.two-st8{fill:#859900;}
+				.two-st9{fill:none;stroke:#839496;stroke-width:2;stroke-miterlimit:10;}
+				.two-st10{fill:none;stroke:#657B83;stroke-miterlimit:10;}
+				.two-st11{font-size:6.9533px;}
+			</style>
+			<g id="SS2_1_">
+				<g id="SS2">
+					<g id="shape2">
+						<rect x="14.2" y="42.5" class="two-st0" width="155.9" height="10.6"/>
+						<rect x="14.2" y="53.1" class="two-st0" width="155.9" height="24"/>
+						<line class="two-st1" x1="13.6" y1="135.3" x2="170.1" y2="135.3"/>
+					</g>
+					<rect x="19.2" y="61.6" class="two-st2" width="24.6" height="8.6"/>
+					<text transform="matrix(1 0 0 1 19.2402 68.5162)" class="two-st3 two-st4 two-st5">Wi–Fi</text>
+					<g>
+						<rect x="19.2" y="87.9" class="two-st2" width="99.4" height="8.6"/>
+						<text transform="matrix(1 0 0 1 19.2402 94.8238)" class="two-st3 two-st4 two-st5">Smart network switch</text>
+						<rect x="19.2" y="99.2" class="two-st2" width="127.3" height="28"/>
+						<text transform="matrix(1 0 0 1 19.2402 103.4908)"><tspan x="0" y="0" class="two-st3 two-st4 two-st6">Humbleb</tspan><tspan x="24.6" y="0" class="two-st3 two-st4 two-st6">r</tspan><tspan x="26.8" y="0" class="two-st3 two-st4 two-st6">ag four lo</tspan><tspan x="52.5" y="0" class="two-st3 two-st4 two-st6">k</tspan><tspan x="55.4" y="0" class="two-st3 two-st4 two-st6">o </tspan><tspan x="60.3" y="0" class="two-st3 two-st4 two-st6">e</tspan><tspan x="63.5" y="0" class="two-st3 two-st4 two-st6">veryday carry, </tspan><tspan x="0" y="6.8" class="two-st3 two-st4 two-st6">williamsbu</tspan><tspan x="28.4" y="6.8" class="two-st3 two-st4 two-st6">r</tspan><tspan x="30.7" y="6.8" class="two-st3 two-st4 two-st6">g prism banh mi culpa litwo-sticle small </tspan><tspan x="0" y="13.6" class="two-st3 two-st4 two-st6">batch. Ramps mic</tspan><tspan x="46.9" y="13.6" class="two-st3 two-st4 two-st6">r</tspan><tspan x="49.2" y="13.6" class="two-st3 two-st4 two-st6">odosing knausgaa</tspan><tspan x="97.8" y="13.6" class="two-st3 two-st4 two-st6">r</tspan><tspan x="100.1" y="13.6" class="two-st3 two-st4 two-st6">d </tspan><tspan x="0" y="20.3" class="two-st3 two-st4 two-st6">cupidatat glossier n</tspan><tspan x="52.2" y="20.3" class="two-st3 two-st4 two-st6">e</tspan><tspan x="55.3" y="20.3" class="two-st3 two-st4 two-st6">xt l</tspan><tspan x="63.3" y="20.3" class="two-st3 two-st4 two-st6">e</tspan><tspan x="66.4" y="20.3" class="two-st3 two-st4 two-st6">vel. Pinte</tspan><tspan x="90.5" y="20.3" class="two-st3 two-st4 two-st6">r</tspan><tspan x="92.8" y="20.3" class="two-st3 two-st4 two-st6">etwo-st fo</tspan><tspan x="107.5" y="20.3" class="two-st3 two-st4 two-st6">r</tspan><tspan x="109.8" y="20.3" class="two-st3 two-st4 two-st6">age.</tspan></text>
+					</g>
+					<rect id="square2" x="151.8" y="101.7" class="two-st0" width="8.4" height="8.4"/>
+					<circle id="circle2" class="two-st0" cx="138.4" cy="65.3" r="4.4"/>
+					<g id="_x33_c2">
+						<circle class="two-st3" cx="159.7" cy="62.6" r="0.9"/>
+						<circle class="two-st3" cx="159.7" cy="65.3" r="0.9"/>
+						<circle class="two-st3" cx="159.7" cy="67.8" r="0.9"/>
+					</g>
+					<g id="menu2_1_">
+						<rect x="36.7" y="148.2" class="two-st2" width="99.4" height="8.6"/>
+						<text transform="matrix(1 0 0 1 36.6914 155.1461)"><tspan x="0" y="0" class="two-st7 two-st4 two-st5">Y</tspan><tspan x="4.9" y="0" class="two-st7 two-st4 two-st5">our Wi–Fi Connection</tspan></text>
+						<rect x="36.7" y="193.1" class="two-st2" width="99.4" height="8.6"/>
+						<text transform="matrix(1 0 0 1 36.6914 200.0826)" class="two-st8 two-st4 two-st5">Modify network config.</text>
+						<rect x="36.7" y="170" class="two-st2" width="99.4" height="8.6"/>
+						<text transform="matrix(1 0 0 1 36.6914 176.9825)"><tspan x="0" y="0" class="two-st3 two-st4 two-st5">Fo</tspan><tspan x="10.3" y="0" class="two-st3 two-st4 two-st5">r</tspan><tspan x="14" y="0" class="two-st3 two-st4 two-st5">get network</tspan></text>
+						<rect x="36.7" y="216.2" class="two-st2" width="99.4" height="8.6"/>
+						<text transform="matrix(1 0 0 1 36.6914 223.1832)"><tspan x="0" y="0" class="two-st3 two-st4 two-st5">W</tspan><tspan x="8.4" y="0" class="two-st3 two-st4 two-st5">rite to NFC tag</tspan></text>
+						<rect x="25.9" y="135.3" class="two-st9" width="132.1" height="101.1"/>
+						<line class="two-st10" x1="35" y1="185.9" x2="148" y2="185.9"/>
+						<line class="two-st10" x1="35" y1="209" x2="148" y2="209"/>
+					</g>
+					<g id="random2">
+						<g>
+							<rect x="47.2" y="238" class="two-st2" width="99.4" height="8.6"/>
+							<text transform="matrix(1 0 0 1 47.1973 244.9772)" class="two-st3 two-st4 two-st5">Random Wi–Fi</text>
+							<rect x="47.2" y="250.2" class="two-st2" width="99.4" height="5.7"/>
+							<text transform="matrix(1 0 0 1 47.1973 255.4469)"><tspan x="0" y="0" class="two-st3 two-st4 two-st11">Secu</tspan><tspan x="15.4" y="0" class="two-st3 two-st4 two-st11">r</tspan><tspan x="18.2" y="0" class="two-st3 two-st4 two-st11">ed</tspan></text>
+							<g>
+								<path class="two-st3" d="M34.8,241.3c-2-2-4.7-3.2-7.7-3.2c-3,0-5.8,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+									l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8
+									c0.1-0.1,0.2-0.2,0.2-0.4C35,241.5,34.9,241.3,34.8,241.3L34.8,241.3z M34.8,241.3"/>
+								<path class="two-st3" d="M27.1,242.9c-1.7,0-3.2,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+									c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8
+									C30.3,243.6,28.8,242.9,27.1,242.9L27.1,242.9z M27.1,242.9"/>
+								<path class="two-st3" d="M28.3,248.9c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+									C27.8,247.7,28.3,248.3,28.3,248.9L28.3,248.9z M28.3,248.9"/>
+							</g>
+						</g>
+						<g>
+							<rect x="47.2" y="272" class="two-st2" width="99.4" height="8.6"/>
+							<text transform="matrix(1 0 0 1 47.1973 278.9356)" class="two-st3 two-st4 two-st5">Random Wi–Fi</text>
+							<rect x="47.2" y="284.1" class="two-st2" width="99.4" height="5.7"/>
+							<text transform="matrix(1 0 0 1 47.1973 289.4059)"><tspan x="0" y="0" class="two-st3 two-st4 two-st11">Secu</tspan><tspan x="15.4" y="0" class="two-st3 two-st4 two-st11">r</tspan><tspan x="18.2" y="0" class="two-st3 two-st4 two-st11">ed</tspan></text>
+							<g>
+								<path class="two-st3" d="M34.8,275.2c-2-2-4.7-3.2-7.7-3.2c-3,0-5.8,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+									l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8
+									c0.1-0.1,0.2-0.2,0.2-0.4C35,275.5,34.9,275.3,34.8,275.2L34.8,275.2z M34.8,275.2"/>
+								<path class="two-st3" d="M27.1,276.8c-1.7,0-3.2,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+									c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8
+									C30.3,277.5,28.8,276.8,27.1,276.8L27.1,276.8z M27.1,276.8"/>
+								<path class="two-st3" d="M28.3,282.9c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+									C27.8,281.7,28.3,282.2,28.3,282.9L28.3,282.9z M28.3,282.9"/>
+							</g>
+						</g>
+						<g>
+							<rect x="47.2" y="303.8" class="two-st2" width="99.4" height="8.6"/>
+							<text transform="matrix(1 0 0 1 47.1973 310.7472)" class="two-st3 two-st4 two-st5">Random Wi–Fi</text>
+							<rect x="47.2" y="315.9" class="two-st2" width="99.4" height="5.7"/>
+							<text transform="matrix(1 0 0 1 47.1973 321.2169)"><tspan x="0" y="0" class="two-st3 two-st4 two-st11">Secu</tspan><tspan x="15.4" y="0" class="two-st3 two-st4 two-st11">r</tspan><tspan x="18.2" y="0" class="two-st3 two-st4 two-st11">ed</tspan></text>
+							<g>
+								<path class="two-st3" d="M34.8,307c-2-2-4.7-3.2-7.7-3.2c-3,0-5.8,1.2-7.7,3.2c-0.1,0.1-0.2,0.2-0.2,0.4c0,0.2,0.1,0.3,0.2,0.4
+									l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0c1.5-1.5,3.6-2.5,6-2.5c2.4,0,4.5,1,6,2.5c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8
+									c0.1-0.1,0.2-0.2,0.2-0.4C35,307.3,34.9,307.1,34.8,307L34.8,307z M34.8,307"/>
+								<path class="two-st3" d="M27.1,308.7c-1.7,0-3.2,0.7-4.2,1.8c-0.2,0.2-0.2,0.6,0,0.8l0.8,0.8c0.2,0.2,0.6,0.2,0.8,0
+									c0.7-0.7,1.6-1,2.5-1c1,0,1.9,0.4,2.5,1c0.2,0.2,0.6,0.2,0.8,0l0.8-0.8c0.2-0.2,0.2-0.6,0-0.8
+									C30.3,309.3,28.8,308.7,27.1,308.7L27.1,308.7z M27.1,308.7"/>
+								<path class="two-st3" d="M28.3,314.7c0,0.7-0.5,1.2-1.2,1.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2
+									C27.8,313.5,28.3,314.1,28.3,314.7L28.3,314.7z M28.3,314.7"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="Phone2">
+				<rect id="screen2" x="14.2" y="42.5" class="two-st0" width="155.9" height="283.5"/>
+				<path id="case2" class="st12" d="M172.2,368.5H12c-6.6,0-12-5.4-12-12V12C0,5.4,5.4,0,12,0h160.2c6.6,0,12,5.4,12,12v344.5
+					C184.2,363.1,178.9,368.5,172.2,368.5z"/>
+				<path id="offset2" class="two-st0" d="M12,362.8c-3.5,0-6.3-2.8-6.3-6.3V12c0-3.5,2.8-6.3,6.3-6.3h160.2c3.5,0,6.3,2.8,6.3,6.3v344.5
+					c0,3.5-2.8,6.3-6.3,6.3H12z"/>
+				<path id="top2" class="two-st0" d="M116.2,16.9H68c-1.3,0-2.4-1.1-2.4-2.4v0c0-1.3,1.1-2.4,2.4-2.4h48.2c1.3,0,2.4,1.1,2.4,2.4v0
+					C118.6,15.8,117.5,16.9,116.2,16.9z"/>
+				<path id="button2" class="two-st0" d="M117.4,354.7H66.9c-4.4,0-7.9-3.6-7.9-7.9v0c0-4.4,3.6-7.9,7.9-7.9h50.5c4.4,0,7.9,3.6,7.9,7.9v0
+					C125.3,351.1,121.8,354.7,117.4,354.7z"/>
+			</g>
+			</svg>
+		</div>
+	</div>
+	<div class="ss-container">
+				<div class="step">
+					<h2>Step 3</h2>
+					<p class="step-text">Select &lsquo;<span class="green">Show advanced settings</span>&rsquo; [you may need to scroll down]</p>
+					<p>Press on the arrow to change the Proxy from &lsquo;<span class="base1">None</span>&lsquo; to &lsquo;<span class="green">Manual</span>&rsquo;</p>
+		</div>
+		<div class="svg-container">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 184.2 368.5" style="enable-background:new 0 0 184.2 368.5;" xml:space="preserve">
+			<style type="text/css">
+				.three-st0{fill:none;stroke:#073642;stroke-miterlimit:10;}
+				.three-st1{fill:#073642;}
+				.three-st2{fill:none;stroke:#657B83;stroke-width:2;stroke-miterlimit:10;}
+				.three-st3{fill:none;}
+				.three-st4{fill:#268BD2;}
+				.three-st5{font-family:'NotoSans';}
+				.three-st6{font-size:9.0955px;}
+				.three-st7{fill:#586E75;}
+				.three-st8{font-size:6.9299px;}
+				.three-st9{font-size:7.363px;}
+				.three-st10{fill:#93A1A1;}
+				.three-st11{fill:#EEE8D5;}
+				.three-st12{font-size:5.8471px;}
+				.three-st13{fill:none;stroke:#586E75;stroke-miterlimit:10;}
+				.three-st14{fill:#859900;}
+			</style>
+			<g id="SS3_1_">
+				<g id="SS3">
+					<rect x="14.2" y="42.5" class="three-st0" width="155.9" height="10.6"/>
+					<g>
+						<circle class="three-st1" cx="159.7" cy="62.6" r="0.9"/>
+						<circle class="three-st1" cx="159.7" cy="65.2" r="0.9"/>
+						<circle class="three-st1" cx="159.7" cy="67.7" r="0.9"/>
+					</g>
+					<polygon class="three-st0" points="14.2,53.1 14.2,77 26.4,77 26.4,59.6 157.3,59.6 157.3,77 170.1,77 170.1,53.1 		"/>
+					<g id="menu3">
+						<rect x="26.4" y="59.6" class="three-st2" width="130.8" height="253.3"/>
+						<rect x="35.5" y="72.8" class="three-st3" width="99" height="8.5"/>
+						<text transform="matrix(1 0 0 1 35.4639 79.6728)"><tspan x="0" y="0" class="three-st4 three-st5 three-st6">Y</tspan><tspan x="4.9" y="0" class="three-st4 three-st5 three-st6">our Wi–Fi Connection</tspan></text>
+						<rect x="36.5" y="93.4" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5024 98.6924)"><tspan x="0" y="0" class="three-st7 three-st5 three-st8">IP add</tspan><tspan x="20.8" y="0" class="three-st7 three-st5 three-st8">r</tspan><tspan x="23.6" y="0" class="three-st7 three-st5 three-st8">ess</tspan></text>
+						<rect x="38.1" y="102.9" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 38.1387 108.541)" class="three-st7 three-st5 three-st9">123.456.7.8</text>
+						<rect x="36.5" y="119.9" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5024 125.2051)"><tspan x="0" y="0" class="three-st7 three-st5 three-st8">Enter passwo</tspan><tspan x="43.6" y="0" class="three-st7 three-st5 three-st8">r</tspan><tspan x="46.4" y="0" class="three-st7 three-st5 three-st8">d</tspan></text>
+						<rect x="37.2" y="133.2" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 37.2466 138.4424)" class="three-st1 three-st5 three-st8">(unchanged)</text>
+						<rect x="50" y="157.6" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 50.0381 162.8496)"><tspan x="0" y="0" class="three-st7 three-st5 three-st8">Sh</tspan><tspan x="8.1" y="0" class="three-st7 three-st5 three-st8">o</tspan><tspan x="12.2" y="0" class="three-st7 three-st5 three-st8">w passwo</tspan><tspan x="43.9" y="0" class="three-st7 three-st5 three-st8">r</tspan><tspan x="46.7" y="0" class="three-st7 three-st5 three-st8">d</tspan></text>
+						<rect x="50" y="175.9" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 50.0381 181.1328)"><tspan x="0" y="0" class="three-st10 three-st5 three-st8">Sh</tspan><tspan x="8.1" y="0" class="three-st10 three-st5 three-st8">o</tspan><tspan x="12.2" y="0" class="three-st10 three-st5 three-st8">w advanced options</tspan></text>
+						<rect x="36.5" y="208.5" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5024 213.7461)" class="three-st7 three-st5 three-st8">DHCP</text>
+						<rect x="36.5" y="226.8" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5024 232.0293)"><tspan x="0" y="0" class="three-st11 three-st5 three-st8">P</tspan><tspan x="4.2" y="0" class="three-st11 three-st5 three-st8">ro</tspan><tspan x="11.1" y="0" class="three-st11 three-st5 three-st8">xy</tspan></text>
+						<rect x="36.5" y="243.4" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5024 248.6885)" class="three-st11 three-st5 three-st8">None</text>
+						<rect x="37.4" y="270" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 37.395 275.3134)" class="three-st7 three-st5 three-st8">Connected</text>
+						<rect x="90.8" y="294.7" class="three-st3" width="34.6" height="5.7"/>
+						<text transform="matrix(1 0 0 1 90.7861 299.9375)" class="three-st7 three-st5 three-st8">CANCEL</text>
+						<rect x="125.3" y="294.7" class="three-st3" width="21.7" height="5.7"/>
+						<text transform="matrix(1 0 0 1 130.8853 299.9384)"><tspan x="0" y="0" class="three-st7 three-st5 three-st8">S</tspan><tspan x="3.8" y="0" class="three-st7 three-st5 three-st8">A</tspan><tspan x="8.1" y="0" class="three-st7 three-st5 three-st8">VE</tspan></text>
+						<rect x="36.5" y="192.2" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5024 197.4394)" class="three-st7 three-st5 three-st8">IP settings</text>
+						<rect x="36.5" y="260.3" class="three-st3" width="99" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5024 264.7392)" class="three-st7 three-st5 three-st12">Status</text>
+						<rect x="36.5" y="156.2" class="three-st13" width="8.4" height="8.4"/>
+						<rect x="36.5" y="174.5" class="three-st14" width="8.4" height="8.4"/>
+						<line class="three-st13" x1="36.5" y1="143" x2="147" y2="143"/>
+						<polygon class="three-st1" points="138.8,213.6 142.4,210.1 135.1,210.1 			"/>
+						<polygon class="three-st14" points="138.8,248 142.4,244.5 135.1,244.5 			"/>
+					</g>
+				</g>
+			</g>
+			<g id="Phones3">
+				<rect x="14.2" y="42.5" class="three-st0" width="155.9" height="283.5"/>
+				<path class="st12" d="M172.2,368.5H12c-6.6,0-12-5.4-12-12V12C0,5.4,5.4,0,12,0h160.2c6.6,0,12,5.4,12,12v344.5
+					C184.2,363.1,178.9,368.5,172.2,368.5z"/>
+				<path class="three-st0" d="M12,362.8c-3.5,0-6.3-2.8-6.3-6.3V12c0-3.5,2.8-6.3,6.3-6.3h160.2c3.5,0,6.3,2.8,6.3,6.3v344.5
+					c0,3.5-2.8,6.3-6.3,6.3H12z"/>
+				<path class="three-st0" d="M116.2,16.9H68c-1.3,0-2.4-1.1-2.4-2.4v0c0-1.3,1.1-2.4,2.4-2.4h48.2c1.3,0,2.4,1.1,2.4,2.4v0
+					C118.6,15.8,117.5,16.9,116.2,16.9z"/>
+				<path class="three-st0" d="M117.4,354.7H66.9c-4.4,0-7.9-3.6-7.9-7.9v0c0-4.4,3.6-7.9,7.9-7.9h50.5c4.4,0,7.9,3.6,7.9,7.9v0
+					C125.3,351.1,121.8,354.7,117.4,354.7z"/>
+			</g>
+			</svg>
+		</div>
+	</div>
+	<div class="ss-container right">
+		<div class="step">
+			<h2>Step 4</h2>
+			<p>Enter the <span class="yellow">Proxy Server</span> in &lsquo;Proxy host name&rsquo;</p>
+			<p>Enter the <span class="magenta">Port</span> under &lsquo;Proxy port&rsquo;</p>
+			<p>Click <span class="green">SAVE</span></p>
+			<p class="mobile-hide">Now, open your phone&rsquo;s web browser and insert your debugProxy session <span class="cyan">Username</span> and <span class="blue">Password</span> for authentication</p>
+		</div>
+		<div class="svg-container">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 184.2 368.5" style="enable-background:new 0 0 184.2 368.5;" xml:space="preserve">
+			<style type="text/css">
+				.four-st0{fill:none;stroke:#073642;stroke-miterlimit:10;}
+				.four-st1{fill:#073642;}
+				.four-st2{fill:none;stroke:#657B83;stroke-width:2;stroke-miterlimit:10;}
+				.four-st3{fill:none;}
+				.four-st4{fill:#268BD2;}
+				.four-st5{font-family:'NotoSans';}
+				.four-st6{font-size:9.1025px;}
+				.four-st7{fill:#586E75;}
+				.four-st8{font-size:6.9353px;}
+				.four-st9{fill:#859900;}
+				.four-st10{font-size:7.3687px;}
+				.four-st11{fill:#EEE8D5;}
+				.four-st12{fill:#B58900;}
+				.four-st13{fill:#D33682;}
+				.four-st14{font-size:5.8516px;}
+				.four-st15{fill:none;stroke:#586E75;stroke-miterlimit:10;}
+				.four-st16{fill:none;stroke:#839496;stroke-miterlimit:10;}
+				.four-st17{fill:#073642;stroke:#586E75;stroke-miterlimit:10;}
+				.four-st18{font-size:6.9299px;}
+			</style>
+			<g id="SS4_1_">
+				<g id="SS4">
+					<rect x="14.2" y="42.6" class="four-st0" width="156" height="10.6"/>
+					<g id="c34">
+						<circle class="four-st1" cx="159.8" cy="62.6" r="0.9"/>
+						<circle class="four-st1" cx="159.8" cy="65.3" r="0.9"/>
+						<circle class="four-st1" cx="159.8" cy="67.8" r="0.9"/>
+					</g>
+					<polygon class="four-st0" points="14.2,53.2 14.2,77.1 26.4,77.1 26.4,59.7 157.4,59.7 157.4,77.1 170.2,77.1 170.2,53.2 		"/>
+					<g id="menu4_1_">
+						<rect id="menu4frame" x="26.4" y="59.7" class="four-st2" width="130.9" height="253.5"/>
+						<rect x="35.5" y="72.8" class="four-st3" width="99.1" height="8.5"/>
+						<text transform="matrix(1 0 0 1 35.4912 79.757)"><tspan x="0" y="0" class="four-st4 four-st5 four-st6">Y</tspan><tspan x="4.9" y="0" class="four-st4 four-st5 four-st6">our Wi–Fi Connection</tspan></text>
+						<rect x="36.5" y="88.5" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5312 93.7697)"><tspan x="0" y="0" class="four-st7 four-st5 four-st8">P</tspan><tspan x="4.2" y="0" class="four-st7 four-st5 four-st8">ro</tspan><tspan x="11.1" y="0" class="four-st7 four-st5 four-st8">xy</tspan></text>
+						<rect x="38.2" y="103" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 38.168 108.6467)" class="four-st9 four-st5 four-st10">Manual</text>
+						<rect x="36.5" y="133.3" class="four-st3" width="99.1" height="31.9"/>
+						<text transform="matrix(1 0 0 1 36.5312 138.5705)"><tspan x="0" y="0" class="four-st7 four-st5 four-st8">H</tspan><tspan x="5.1" y="0" class="four-st7 four-st5 four-st8">T</tspan><tspan x="9.1" y="0" class="four-st7 four-st5 four-st8">TP p</tspan><tspan x="23.2" y="0" class="four-st7 four-st5 four-st8">ro</tspan><tspan x="30.1" y="0" class="four-st7 four-st5 four-st8">xy used </tspan><tspan x="56.7" y="0" class="four-st7 four-st5 four-st8">b</tspan><tspan x="60.9" y="0" class="four-st7 four-st5 four-st8">y b</tspan><tspan x="70.5" y="0" class="four-st7 four-st5 four-st8">ro</tspan><tspan x="77.4" y="0" class="four-st7 four-st5 four-st8">wser </tspan><tspan x="0" y="8.3" class="four-st7 four-st5 four-st8">but may not be used </tspan><tspan x="68.9" y="8.3" class="four-st7 four-st5 four-st8">b</tspan><tspan x="73.1" y="8.3" class="four-st7 four-st5 four-st8">y other </tspan><tspan x="0" y="16.6" class="four-st7 four-st5 four-st8">applications.</tspan></text>
+						<rect x="38" y="165.3" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 38.0225 170.5647)"><tspan x="0" y="0" class="four-st11 four-st5 four-st8">P</tspan><tspan x="4.2" y="0" class="four-st11 four-st5 four-st8">ro</tspan><tspan x="11.1" y="0" class="four-st11 four-st5 four-st8">xy host name</tspan></text>
+						<rect x="38" y="177.1" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 38.0225 182.4143)"><tspan x="0" y="0" class="four-st12 four-st5 four-st8">debugp</tspan><tspan x="25.3" y="0" class="four-st12 four-st5 four-st8">ro</tspan><tspan x="32.2" y="0" class="four-st12 four-st5 four-st8">xy.com</tspan></text>
+						<rect x="38" y="189" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 38.0225 194.2678)"><tspan x="0" y="0" class="four-st11 four-st5 four-st8">P</tspan><tspan x="4.2" y="0" class="four-st11 four-st5 four-st8">ro</tspan><tspan x="11.1" y="0" class="four-st11 four-st5 four-st8">xy port</tspan></text>
+						<rect x="38" y="199.2" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 38.0225 204.5178)" class="four-st13 four-st5 four-st8">8080</text>
+						<rect x="37.4" y="212.2" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 37.4238 217.4416)"><tspan x="0" y="0" class="four-st1 four-st5 four-st8">Bypass p</tspan><tspan x="28.9" y="0" class="four-st1 four-st5 four-st8">ro</tspan><tspan x="35.8" y="0" class="four-st1 four-st5 four-st8">xy for</tspan></text>
+						<rect x="50.1" y="238" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 50.1045 243.2326)" class="four-st7 four-st5 four-st8">Authenticate server</text>
+						<rect x="37.4" y="266.6" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 37.4238 271.9006)" class="four-st7 four-st5 four-st8">Connected</text>
+						<rect x="36.5" y="257.7" class="four-st3" width="99.1" height="5.7"/>
+						<text transform="matrix(1 0 0 1 36.5312 262.1301)" class="four-st7 four-st5 four-st14">Status</text>
+						<polygon class="four-st9" points="138.9,108.2 142.5,104.7 135.2,104.7 			"/>
+						<rect x="36.5" y="236.6" class="four-st15" width="8.4" height="8.4"/>
+						<line class="four-st16" x1="38" y1="185.8" x2="147.5" y2="185.8"/>
+						<line class="four-st16" x1="38.8" y1="209.5" x2="148.3" y2="209.5"/>
+						<line class="four-st17" x1="38.8" y1="232.6" x2="148.3" y2="232.6"/>
+						<g id="cancel-save">
+							<rect x="91.3" y="294.7" class="four-st3" width="34.6" height="5.7"/>
+							<text transform="matrix(1 0 0 1 91.2818 299.9375)" class="four-st7 four-st5 four-st18">CANCEL</text>
+							<rect x="125.8" y="294.7" class="four-st3" width="21.7" height="5.7"/>
+							<text transform="matrix(1 0 0 1 131.3809 299.9384)"><tspan x="0" y="0" class="four-st9 four-st5 four-st18">S</tspan><tspan x="3.8" y="0" class="four-st9 four-st5 four-st18">A</tspan><tspan x="8.1" y="0" class="four-st9 four-st5 four-st18">VE</tspan></text>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="Phone4">
+				<rect id="screen4" x="14.2" y="42.5" class="four-st0" width="155.9" height="283.5"/>
+				<path id="case4" class="st12" d="M172.2,368.5H12c-6.6,0-12-5.4-12-12V12C0,5.4,5.4,0,12,0h160.2c6.6,0,12,5.4,12,12v344.5
+					C184.2,363.1,178.9,368.5,172.2,368.5z"/>
+				<path id="offset4" class="four-st0" d="M12,362.8c-3.5,0-6.3-2.8-6.3-6.3V12c0-3.5,2.8-6.3,6.3-6.3h160.2c3.5,0,6.3,2.8,6.3,6.3v344.5
+					c0,3.5-2.8,6.3-6.3,6.3H12z"/>
+				<path id="top1" class="four-st0" d="M116.2,16.9H68c-1.3,0-2.4-1.1-2.4-2.4v0c0-1.3,1.1-2.4,2.4-2.4h48.2c1.3,0,2.4,1.1,2.4,2.4v0
+					C118.6,15.8,117.5,16.9,116.2,16.9z"/>
+				<path id="button4" class="four-st0" d="M117.4,354.7H66.9c-4.4,0-7.9-3.6-7.9-7.9v0c0-4.4,3.6-7.9,7.9-7.9h50.5c4.4,0,7.9,3.6,7.9,7.9v0
+					C125.3,351.1,121.8,354.7,117.4,354.7z"/>
+			</g>
+			</svg>
+		</div>
+		<p class="desktop-hide ">Now, open your phone&rsquo;s web browser and insert your debugProxy session <span class="cyan">Username</span> and <span class="blue">Password</span> for authentication</p>
+	</div>
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">body {
+  margin: 0px;
+  margin-top: 37px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  background-color: #002b36; /*$base03*/
+  color: #839496; /*$base0*/
+
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.home-band {
+  background-color: #073642;/*$base02*/
+  min-height: 28px !important;
+}
+.onboarding-container {
+  width: 90%;
+  margin: 1em auto;
+}
+.certificates {
+  margin-top: 4em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.certificate {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+a {
+  width: 100%;
+  min-width: 200px;
+  display: inline-block;
+  border: 1px solid #073642;/*$base02*/
+  border-radius: 10px;
+  padding: 2em 2em;
+  text-decoration: none;
+}
+.apple {
+  color: #268bd2;
+}
+.apple:hover {
+  border-color: #268bd2;
+}
+.windows {
+  color: #859900;
+}
+.windows:hover {
+  border-color: #859900;
+}
+.android {
+  color: #d33682;
+}
+.android:hover {
+  border-color: #d33682;
+}
+.other {
+  color: #b58900;
+}
+.other:hover {
+  border-color: #b58900;
+}
+</style>
+</head>
+<body>
+
+  <div class="home-band">
+    &nbsp;
+  </div>
+  <div class="onboarding-container">
+    <h1>
+    debugProxy Certificates
+    </h1>
+    <p>
+    The proxy server is working. To intercept HTTPS traffic you will need to
+    install a certificate. In most cases this simply involves clicking on the link
+    which matches your system and following the prompts.
+    </p>
+    <div class="certificates">
+      <div class="certificate">
+        <a class="apple" href="/certificates/pem">Apple</a>
+      </div>
+
+      <div class="certificate">
+        <a class="windows" href="/certificates/p12">Windows</a>
+      </div>
+
+      <div class="certificate">
+        <a class="android" href="/certificates/pem">Android</a>
+      </div>
+
+      <div class="certificate">
+        <a class="other" href="/certificates/pem">Other</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

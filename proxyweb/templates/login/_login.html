@@ -1,0 +1,11 @@
+<div class="sign-in">
+  <form action="user/sign-in" method="POST">
+    <div class="front-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+      <input type="text" placeholder="Enter Email" name="email" required> <!-- autofocus taken out due to below fold start -->
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <button class="login" type="submit">Login</button>
+    </div>
+  </form>
+</div>

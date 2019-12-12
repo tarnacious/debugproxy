@@ -1,0 +1,67 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<div class="hero">
+  <div class="container slab-of-text">
+    <h1>Certificates</h1>
+    <p>To proxy HTTPS traffic you must trust the debugProxy root certificate</p>
+  </div>
+</div>
+<div class="home-body container step-by-step slab-of-text">
+  <div class="">
+    <p>
+    To intercept HTTPS traffic debugProxy acts as a Certificate Authority which
+    generates certificates on-the-fly. The root certificate is listed in PEM
+    format at the bottom of this page.
+    </p>
+  </div>
+  <p>
+  <span class="green">Note:</span> you don&rsquo;t need to install the root
+  certificate on the device you use the debugProxy web interface on. You only need to install it on the system that is connecting through the proxy.</p>
+  <p>Install root certificate on the device you want to proxy through
+  debugProxy by browsing to this page and clicking on the relevent certificate
+  link below. Depending on your system you should be prompted to install the
+  certificate.</p>
+  <p>
+  <div class="certificates">
+    <div class="certificate">
+      <a class="blue-link link-buttons__pattern-bg" href="{{ url_for('certificates.pem') }}">Apple</a>
+    </div>
+
+    <div class="certificate">
+      <a class="cyan-link link-buttons__pattern-bg" href="{{ url_for('certificates.p12') }}">Windows</a>
+    </div>
+
+    <div class="certificate">
+      <a class="green-link link-buttons__pattern-bg" href="{{ url_for('certificates.pem') }}">Android</a>
+    </div>
+
+    <div class="certificate">
+      <a class="violet-link link-buttons__pattern-bg" href="{{ url_for('certificates.pem') }}">Other</a>
+    </div>
+  </div>
+  <p>Some systems require you take an extra step of trusting the certificate.</p>
+  <ul>
+    <li><span class="blue">iOS 10 &amp; 11</span>
+      <ul><br>
+        <li>Naviagte to:<br><span class="blue">General</span> &gt;
+        <span class="blue">About</span> &gt;
+        <span class="blue">Certificate Trust</span></li>
+        <li>Tap the button next to where debugproxy is listed to &lsquo;<span class="blue">Trust the Certificate</span>&rsquo;</li>
+      </ul><br>
+    </li>
+  </ul>
+  <p>After you have finished using debugProxy, it is recommended to deactivate
+  the debugProxy certificate.</p>
+  <h2>The Certificate</h2>
+  <p>
+    The debugProxy root certificate is listed below in PEM format.
+  </p>
+
+  <p class="certificate-char">
+
+  </p>
+  <pre class="debugproxy-cert">{{ certificate }}</pre>
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

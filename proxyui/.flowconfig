@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/npm/.*
+.*/node_modules/fbjs.*
+
+[include]
+./client/
+
+[libs]
+node_modules/immutable/dist/immutable.js.flow
+
+[options]
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/client/noop.js'
+module.name_mapper='^\(.*\)' -> '<PROJECT_ROOT>/client/\1'
+esproposal.class_instance_fields=enable

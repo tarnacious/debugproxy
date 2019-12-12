@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Inconsolata';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/static/fonts/Inconsolata-regular/inconsolata-regular.eot');
+  src: url('/static/fonts/Inconsolata-regular/inconsolata-regular.eot?#iefix') format('embedded-opentype'),
+       local('Inconsolator-regular'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.woff2') format('woff2'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.woff') format('woff'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.ttf') format('truetype'),
+       url('/static/fonts/Inconsolata-regular/inconsolata-regular.svg#Inconsolata') format('svg');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-weight: 700;
+  font-style: bold;
+  src: url('/static/fonts/Inconsolata-bold/inconsolata-bold.eot');
+  src: url('/static/fonts/Inconsolata-bold/inconsolata-bold.eot?#iefix') format('embedded-opentype'),
+       local('Inconsolator-bold'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.woff2') format('woff2'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.woff') format('woff'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.ttf') format('truetype'),
+       url('/static/fonts/Inconsolata-bold/inconsolata-bold.svg#Inconsolata') format('svg');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/static/fonts/Noto-Sans-regular/Noto-Sans-regular.eot');
+  src: url('/static/fonts/Noto-Sans-regular/Noto-Sans-regular.eot?#iefix') format('embedded-opentype'),
+       local('Noto-Sans'),
+       local('Noto-Sans-regular'),
+       url('/static/fonts/Noto-Sans-regular/Noto-Sans-regular.woff2') format('woff2'),
+       url('/static/fonts/Noto-Sans-regular/Noto-Sans-regular.woff') format('woff'),
+       url('/static/fonts/Noto-Sans-regular/Noto-Sans-regular.ttf') format('truetype'),
+       url('/static/fonts/Noto-Sans-regular/Noto-Sans-regular.svg#Noto-Sans') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/static/fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot');
+  src: url('/static/fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot?#iefix') format('embedded-opentype'),
+       local('Roboto-Slab'),
+       local('Roboto-Slab-regular'),
+       url('/static/fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff2') format('woff2'),
+       url('/static/fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff') format('woff'),
+       url('/static/fonts/Roboto-Slab-regular/Roboto-Slab-regular.ttf') format('truetype'),
+       url('/static/fonts/Roboto-Slab-regular/Roboto-Slab-regular.svg#Roboto-Slab') format('svg');
+}
+
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/static/fonts/Roboto-Slab-700/Roboto-Slab-700.eot');
+  src: url('/static/fonts/Roboto-Slab-700/Roboto-Slab-700.eot?#iefix') format('embedded-opentype'),
+       local('Roboto Slab Bold'),
+       local('Roboto-Slab-700'),
+       url('/static/fonts/Roboto-Slab-700/Roboto-Slab-700.woff2') format('woff2'),
+       url('/static/fonts/Roboto-Slab-700/Roboto-Slab-700.woff') format('woff'),
+       url('/static/fonts/Roboto-Slab-700/Roboto-Slab-700.ttf') format('truetype'),
+       url('/static/fonts/Roboto-Slab-700/Roboto-Slab-700.svg#RobotoSlab') format('svg');
+}

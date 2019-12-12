@@ -1,0 +1,31 @@
+<div class="topnav" id="myTopnav">
+  <a class="link-buttons__pattern-bg icon" href="javascript:void(0);" class="" onclick="responsiveNav()">
+    &#9776;
+  </a>
+  <div class="dropdown">
+    <a class="link-buttons__pattern-bg active" href="{{ url_for('home.home_page') }}">
+      Home
+    </a>
+  </div>
+  <div class="dropdown">
+    <a class="link-buttons__pattern-bg" href="{{ url_for('home.documentation') }}">
+      Guides
+    </a>
+    <div class="dropdown-content">
+      <a class="link-buttons__pattern-bg dropdown-content-link" href="{{ url_for('home.documentation') }}">Intro</a>
+      <a class="link-buttons__pattern-bg dropdown-content-link" href="{{ url_for('home.curl') }}">cURL</a>
+      <a class="link-buttons__pattern-bg dropdown-content-link" href="{{ url_for('home.android') }}">Android</a>
+      <a class="link-buttons__pattern-bg dropdown-content-link" href="{{ url_for('home.ios') }}">iOS</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a class="link-buttons__pattern-bg" href="{{ url_for('home.certificates') }}">
+      Certificates
+    </a>
+  </div>
+  <div class="dropdown">
+    <a class="link-buttons__pattern-bg" href="{{ url_for('home.faq') }}">
+      FAQ
+    </a>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<div class="home">
+	<div class="home-band">
+
+	</div>
+</div>
+<div class="outer-form-container">
+
+
+	{% from "common/form_macros.html" import render_field, render_submit_field %}
+	  <div class="form-container">
+
+	  	<h2>User Profile</h2>
+
+      <form action="" method="POST" class="form" role="form">
+	    <div class="form-body">
+	    {{ form.hidden_tag() }}
+
+	    {{ render_field(form.first_name, tabindex=240) }}
+
+	    {{ render_field(form.last_name, tabindex=250) }}
+
+	    {{ render_submit_field(form.submit, tabindex=280) }}
+	    </div>
+      </form>
+
+		  <p class="change-password">
+				<a href="{{ url_for('user.change_password') }}">Change password</a>
+			</p>
+
+      <br />
+      <br />
+      <p>
+      You can completely delete you account below, this will remove all your
+      data from the debugproxy servers. There is no confirmation, but you can
+      always create a new account if you want.
+      </p>
+      <form action="/users/delete-account" method="POST" class="form" role="form">
+	    <div class="form-body">
+	    {{ form.hidden_tag() }}
+	    {{ render_submit_field(form.submit, tabindex=680, label='Delete Account') }}
+	    </div>
+      </form>
+
+		</div>
+
+
+</div>
+
+{% endblock %}

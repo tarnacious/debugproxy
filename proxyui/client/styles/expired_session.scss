@@ -1,0 +1,12 @@
+.expired-session {
+  border: 1px solid $base02;
+  margin-top: 10px;
+  border: 1px solid $red;
+  padding: 5px;
+  background: #FF4136;
+  color: white;
+
+  a {
+    color: white;
+  }
+}

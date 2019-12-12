@@ -1,0 +1,62 @@
+{% extends "common/page_base.html" %}  {# common/page_base.html extends layout.html #}
+
+{% block content %}
+<section class="hero">
+	<div class="step-by-step-top container">
+		<h1>iOS Proxy Configuration</h1>
+		<p>To configure your iOS proxy server you have to connect through a Wi-Fi connection.</p>
+	</div>
+</section>
+<div class="home-body container step-by-step">
+  <p>This guide should work for iOS 10 and 11. Unfortunatly HTTPS tunneling through a proxy with credentials, like debugProxy, doesn't work properly on iOS 9 and lower.<p>
+	<div class="ss-container">
+		<div class="step">
+			<h2>Step 1</h2>
+			<p>Before configuring debugProxy on your iOS device, you need to download and authorise a debugProxy <a target="_blank" href="{{ url_for('home.certificates') }}">Certificate</a>.</p>
+		</div>
+		<div class="svg-container">
+			<img src="/static/img/iPhone5c-01.svg" alt="Setting up a proxy on the iPhone">
+		</div>
+	</div>
+	<div class="ss-container right">
+		<div class="step">
+			<h2>Step 2</h2>
+			<p>Go to <span class="blue">Settings &gt; Wi-Fi</span> and select your Wi-Fi connection to open your Wi-Fi settings <br><br>(debugProxy has to be connected through a Wi-Fi connection)</p>
+		</div>
+		<div class="svg-container">
+			<img src="/static/img/iPhone5c-02.svg" alt="Setting up a proxy on the iPhone">
+		</div>
+	</div>
+	<div class="ss-container">
+		<div class="step">
+			<h2>Step 3</h2>
+			<p>Scroll down and under HTTP Proxy, select &lsquo;<span class="blue">Manual</span>&rsquo;</p>
+		</div>
+		<div class="svg-container">
+		<img src="/static/img/iPhone5c-03.svg" alt="Setting up a proxy on the iPhone">
+		</div>
+	</div>
+	<div class="ss-container right">
+		<div class="step">
+			<h2>Step 4</h2>
+			<p>Enter the <span class="yellow">Proxy Server</span> in &lsquo;Server&rsquo;</p>
+			<p>Enter the <span class="magenta">Port</span> under &lsquo;Port&rsquo;</p>
+			<!-- <p>Select &lsquo;Authentication&rsquo; and insert your debugProxy session <span class="cyan">Username</span> and <span class="blue">Password</span> for authentication</p> -->
+			<p class="mobile-hide">Now, open your phone&rsquo;s web browser and insert your debugProxy session <span class="cyan">Username</span> and <span class="blue">Password</span> for authentication</p>
+		</div>
+		<div class="svg-container">
+			<img src="/static/img/iPhone5c-04.svg" alt="Setting up a proxy on the iPhone">
+		</div>
+	</div>
+	<div class="ss-container video-wrapper">
+		<div class="step">
+			<h2>Video of Steps 2-4</h2>
+			<p>A short video of the steps needed to set up a proxy (in this case debugProxy) on an iPhone5 running iOS 10.</p>
+		</div>
+		<div class="svg-container youtube-container">
+			<iframe src="https://www.youtube.com/embed/XWC41SWFPYw" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+{% include "common/_footer.html" %}
+{% endblock %}

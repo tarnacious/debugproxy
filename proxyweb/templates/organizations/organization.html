@@ -1,0 +1,74 @@
+{% extends "common/page_base.html" %}
+
+{% block content %}
+<div class="home">
+  <div class="home-band">
+
+  </div>
+</div>
+  <div class="org-body-container">
+  <h1>{{ organization.name }}</h1>
+
+  <h3>Users</h3>
+  <p>
+  <a class="create-user" href="{{ url_for('users.create_user', organization_id=organization.id) }}">
+    Create user
+  </a>
+  </p>
+
+  {% if organization.users|length > 0 %}
+    <table class="table">
+      <tr>
+        <th>
+          First Name
+        </th>
+        <th>
+          Last Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Confirmed
+        </th>
+        <th>
+          Roles
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+      {% for user in organization.users %}
+      <tr>
+        <td>
+        {{ user.first_name }}
+        </td>
+        <td>
+        {{ user.last_name }}
+        </td>
+        <td>
+        {{ user.email }}
+        </td>
+        <td>
+        {{ user.confirmed_at }}
+        </td>
+        <td>
+        {% for role in user.roles %}
+          <span>{{ role.name }}<span>
+        {% endfor %}
+        </td>
+
+        <td>
+          <a href="{{ url_for('users.user_detail', user_id=user.id) }}">Details</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>Organization doesn't have any users.<p>
+  {% endif %}
+  <p>Back to all <a href="{{ url_for('organizations.organizations') }}">organizations</a></p>
+
+</div>
+{% endblock %}
+

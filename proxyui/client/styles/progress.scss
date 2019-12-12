@@ -1,0 +1,136 @@
+.request-progress {
+  width: 50%;
+  float: left;
+  border-left: 1px dotted $base02;
+  padding: .25em 0;
+
+  .progress-button-container{
+    width: calc(100% / 3);
+  }
+  .request-container {
+    width: calc(100% / 3);
+    .progress-title {
+      @include mono-space;
+      color: $green;
+    }
+  }
+  .response-container {
+    width: calc(100% / 3);
+    border-left: 1px dotted $base02;
+    color: $violet;
+    .progress-title {
+      @include mono-space;
+    }
+  }
+  .progress-button-container, .request-container, .response-container {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    margin: 3px 0px;
+
+   .resume-filler {   /*leaves space for when buttons not displayed*/
+      display: inline-block;
+      height: .1px;
+    }
+    .button-filler {
+      height: 45px;
+      width: 45px;
+      border: 1px solid $base02;
+      border-radius: 3em;
+    }
+
+    .blank {
+      display: none;
+    }
+    .state-container {
+      display: inline-flex;
+      min-width: 20px;
+      position: relative;
+
+    }
+    .resume-buttons-container {
+      margin-top: 3px;
+      position: relative;
+      display: inline-flex;
+      align-content: center;
+
+      button.resume-request-button {
+        background-color: $base02;
+        height: 45px;
+        width: 45px;
+        border: 1px solid $base03;
+        border-radius: 3em;
+        @include linearGradient($base02, $base03);
+        fill: $green;
+
+        &:hover {
+          background: $green;
+          fill: $base03;
+          cursor: pointer;
+        }
+        svg {
+          vertical-align: middle;
+        }
+      }
+
+      button.resume-response-button {
+        background-color: $base02;
+        height: 45px;
+        width: 45px;
+        border: 1px solid $base03;
+        border-radius: 3em;
+
+        @include linearGradient($base02, $base03);
+        fill: $violet;
+        &:hover {
+          background: $violet;
+          fill: $base03;
+          cursor: pointer;
+        }
+        svg {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .state {
+    background-color: $base02;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+    border-radius: 20px;
+    &.error {
+      background-color: $base03 !important;
+      border: 1px solid $red !important;
+    }
+  }
+  .state_2, .state_4 {
+    margin-left: 10px;
+  }
+  .state_1.active, .state_2.active {
+    background-color: $yellow;
+    width: 20px;
+
+  }
+  .state_1.complete, .state_2.complete {
+    background-color: $base03;
+    color: $green;
+    border: 1px solid $green;
+    width: 21px;
+    height: 21px
+  }
+
+  .state_3.active, .state_4.active {
+    background-color: $yellow;
+    width: 20px;
+  }
+  .state_3.complete, .state_4.complete {
+    background-color: $base03;
+    color: $violet;
+    border: 1px solid $violet;
+    width: 21px;
+    height: 21px
+  }
+}
