@@ -16,4 +16,5 @@ tags
 .sass-cache
 *.pyc
 *.retry
-
+.build
+.coverage
