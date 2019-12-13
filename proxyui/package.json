@@ -63,7 +63,7 @@
     "immutable": "3.8.1",
     "install": "0.8.7",
     "jest-cli": "18.1.0",
-    "moment": "2.18.1",
+    "moment": "2.19.3",
     "node-sass": "4.13.0",
     "npm": "4.2.0",
     "react-ace": "4.2.1",
