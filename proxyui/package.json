@@ -65,7 +65,7 @@
     "jest-cli": "18.1.0",
     "moment": "2.18.1",
     "node-sass": "4.13.0",
-    "npm": "4.2.0",
+    "npm": "6.13.4",
     "react-ace": "4.2.1",
     "react-addons-css-transition-group": "15.4.2",
     "react-addons-test-utils": "15.4.2",
