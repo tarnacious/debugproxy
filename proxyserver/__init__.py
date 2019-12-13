@@ -20,16 +20,6 @@ def proxywebsocket() -> None:
     from proxywebsocket.main import main
     main()
 
-def simpleserver() -> None:
-    p = Process(target=proxyworker)
-    p.start()
-
-    p = Process(target=proxyserver)
-    p.start()
-
-    p = Process(target=proxywebsocket)
-    p.start()
-
 # Generates a certificate with "debugproxy" as the organization and commona name
 # in the default location mitmproxy expects it. The ~/.mitmproxy directory must
 # be removed manually for this command to work.

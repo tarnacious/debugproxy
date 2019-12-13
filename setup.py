@@ -40,7 +40,6 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'simpleserver=proxyserver:simpleserver',
             'proxyserver=proxyserver:proxyserver',
             'proxywebsocket=proxyserver:proxywebsocket',
             'proxyworker=proxyserver:proxyworker',

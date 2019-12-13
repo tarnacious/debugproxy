@@ -152,11 +152,16 @@ Run the server
 
    proxyworker
 
-## simpleserver
+## start using honcho
 
-Run a proxyserver, a proxyworker and proxywebsocket in a single process.
+It's possible to run all the services for development using honcho. 
 
-  simpleserver
+    honcho start
+
+This doesn't start the redis and progress docker containers which are started
+with docker compose.
+
+    docker-compose up
 
 ## Testing
 
@@ -176,3 +181,4 @@ Coverage
 
 The proxyui project also has it's own test, coverage and type checker described
 in the readme in the project directory.
+
