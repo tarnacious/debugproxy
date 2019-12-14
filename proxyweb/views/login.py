@@ -29,6 +29,7 @@ url = config["WEBSITE_URL"]
 @blueprint.route('register', methods=['GET', 'POST'])
 def register() -> Any:
     show_captcha = current_app.config.get("USE_GOOGLE_CAPTCHA", False) == True
+    site_key = current_app.config.get("GOOGLE_CAPTCHA_PUBLIC", '')
     form = RegisterForm(request.form)
 
     if request.method == 'POST' and form.validate():
@@ -40,7 +41,7 @@ def register() -> Any:
                 recapture_response = request.form["g-recaptcha-response"]
                 response = requests.post('https://www.google.com/recaptcha/api/siteverify', data =
                     {
-                        'secret':'6LfQJDAUAAAAAMLs_76cpqJjfXcBAuVaOVX4FdHL',
+                        'secret': current_app.config.get("GOOGLE_CAPTCHA_SECRET", ''),
                         'response': recapture_response
                     }
                 )
@@ -65,13 +66,13 @@ def register() -> Any:
             errors = True
 
         if errors:
-            return render_template('login/register.html', form=form, show_captcha=show_captcha)
+            return render_template('login/register.html', form=form, show_captcha=show_captcha, site_key=site_key)
 
         organization = Organization.query.filter(Organization.name == "debugproxy").first()
 
         if not organization:
             flash("Unable to create user. Please try again later.")
-            return render_template('login/register.html', form=form, show_captcha=show_captcha)
+            return render_template('login/register.html', form=form, show_captcha=show_captcha, site_key=site_key)
 
         user = User()
         form.populate_obj(user)
@@ -84,7 +85,7 @@ def register() -> Any:
         except IntegrityError:
             db.session.rollback()
             flash("Unable to create user. Please try again later.")
-            return render_template('login/register.html', form=form, show_captcha=show_captcha)
+            return render_template('login/register.html', form=form, show_captcha=show_captcha, site_key=site_key)
 
         email_manager = EmailManager(current_app)
         email_manager.send_registered_email(user, None, True)
@@ -92,7 +93,7 @@ def register() -> Any:
         return redirect(url_for('login.registration_email_sent'))
 
 
-    return render_template('login/register.html', form=form, show_captcha=show_captcha)
+    return render_template('login/register.html', form=form, show_captcha=show_captcha, site_key=site_key)
 
 
 @blueprint.route('registration-email-sent', methods=['GET', 'POST'])
