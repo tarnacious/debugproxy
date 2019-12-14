@@ -13,10 +13,11 @@ DATA_PATH = "./data"
 # Flask-Mail settings
 MAIL_USERNAME = ''
 MAIL_PASSWORD = ''
-MAIL_DEFAULT_SENDER = ''
+USER_EMAIL_SENDER_NAME = ''
+USER_EMAIL_SENDER_EMAIL = ''
 MAIL_SERVER = ''
 MAIL_PORT = 587
-MAIL_USE_SSL = True
+MAIL_USE_SSL = False
 MAIL_USE_TLS = True
 
 LOG_FILE = '/tmp/website.log'
@@ -60,7 +61,7 @@ USER_ENABLE_CHANGE_USERNAME = False  # Allow users to change their username
 USER_ENABLE_CONFIRM_EMAIL = True  # Force users to confirm their email
 USER_ENABLE_FORGOT_PASSWORD = True  # Allow users to reset their passwords
 USER_ENABLE_EMAIL = True  # Register with Email
-USER_ENABLE_RETYPE_PASSWORD = True  # Prompt for `retype password` in:
+USER_REQUIRE_RETYPE_PASSWORD = True
 USER_ENABLE_USERNAME = False  # Register and Login with username
 USER_AFTER_LOGIN_ENDPOINT = 'home.home_page'
 USER_AFTER_LOGOUT_ENDPOINT = 'home.home_page'
@@ -68,5 +69,8 @@ USER_ENABLE_REGISTRATION = True
 USER_ENABLE_INVITATION = True
 USER_REQUIRE_INVITATION = True
 USER_SEND_PASSWORD_CHANGED_EMAIL = False
+USER_ALLOW_LOGIN_WITHOUT_CONFIRMED_EMAIL = False
+USER_SHOW_EMAIL_DOES_NOT_EXIST = False
+USER_SHOW_USERNAME_DOES_NOT_EXIST = False
 
 TEMPLATES_AUTO_RELOAD = True

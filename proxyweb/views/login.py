@@ -9,13 +9,12 @@ from typing import Any
 from config import read_config
 from database.models import ProxySession
 from sqlalchemy.exc import IntegrityError
-from flask_user import emails
+from flask_user.email_manager import EmailManager
 import database as db
 import requests
 from email.utils import parseaddr
 from datetime import datetime
 from flask_login import logout_user, login_user
-from proxyweb.views.forms import UserRegisterForm
 
 import os
 from proxyweb.views.forms import RegisterForm
@@ -83,93 +82,13 @@ def register() -> Any:
         except IntegrityError:
             db.session.rollback()
             flash("Unable to create user. Please try again later.")
-            return render_template('login/register.html', form=form)
 
-
-        user_manager = current_app.user_manager
-        token = user_manager.generate_token(int(user.id))
-        confirm_email_link = url_for('login.register_set_password',
-                                     token=token,
-                                     _external=True)
-        user.reset_password_token = token
-        try:
-            db.session.commit()
-        except IntegrityError:
-            db.session.rollback()
-            flash("Unable to create user. Please try again later.")
-
-
-        emails.send_registered_email(user, None, confirm_email_link)
+        email_manager = EmailManager(current_app)
+        email_manager.send_registered_email(user, None, True)
 
         return redirect(url_for('login.registration_email_sent'))
 
 
-    return render_template('login/register.html', form=form)
-
-
-
-@blueprint.route('set-password/<token>', methods=['GET', 'POST'])
-def register_set_password(token: str) -> Any:
-    """ Verify the password reset token, Prompt for new password, and set the
-    user's password."""
-    # Verify token
-    user_manager = current_app.user_manager
-    db_adapter = user_manager.db_adapter
-
-    if _call_or_get(current_user.is_authenticated):
-        logout_user()
-
-    is_valid, has_expired, user_id = user_manager.verify_token(
-        token,
-        user_manager.reset_password_expiration)
-
-    if has_expired:
-        flash('Your registration link has expired.', 'error')
-        return redirect(url_for('user.login'))
-
-    if not is_valid:
-        flash('Your registration link is invalid.', 'error')
-        return redirect(url_for('user.login'))
-
-    user = user_manager.get_user_by_id(user_id)
-    if user:
-        # Avoid re-using old tokens
-        if hasattr(user, 'reset_password_token'):
-            verified = user.reset_password_token == token
-        else:
-            verified = True
-    if not user or not verified:
-        flash('Your registration link is invalid.', 'error')
-        return redirect(url_for("user.login"))
-
-    # Mark email as confirmed
-    user_email = emails.get_primary_user_email(user)
-    user_email.confirmed_at = datetime.utcnow()
-
-    # Initialize form
-    form = UserRegisterForm(request.form)
-
-    # Process valid POST
-    if request.method == 'POST' and form.validate():
-        # Invalidate the token by clearing the stored token
-        if hasattr(user, 'reset_password_token'):
-            db_adapter.update_object(user, reset_password_token='')
-
-        # Change password
-        hashed_password = user_manager.hash_password(form.new_password.data)
-        if db_adapter.UserAuthClass and hasattr(user, 'user_auth'):
-            user_auth = user.user_auth
-        else:
-            user_auth = user
-        db_adapter.update_object(user_auth, password=hashed_password)
-        db_adapter.commit()
-
-        # Auto-login after reset password or redirect to login page
-        next = request.args.get('next', url_for("home.home_page"))
-        return _do_login_user(user, next)
-
-    # Process GET or invalid POST
-    return render_template('login/register_set_password.html', form=form)
 
 
 @blueprint.route('registration-email-sent', methods=['GET', 'POST'])
@@ -191,21 +110,21 @@ def reset_password_email_sent() -> Any:
 def send_reset_password_email(email):
     # Find user by email
     user_manager =  current_app.user_manager
-    db_adapter = user_manager.db_adapter
 
-    user, user_email = user_manager.find_user_by_email(email)
+    user, user_email = user_manager.db_manager.get_user_and_user_email_by_email(email)
     if user:
         # Generate reset password link
-        token = user_manager.generate_token(int(user.get_id()))
-        reset_password_link = url_for('login.reset_password', token=token, _external=True)
+        email_manager = EmailManager(current_app)
 
         # Send forgot password email
-        emails.send_forgot_password_email(user, user_email, reset_password_link)
+        email_manager.send_reset_password_email(user, None)
 
         # Store token
-        if hasattr(user, 'reset_password_token'):
-            db_adapter.update_object(user, reset_password_token=token)
-            db_adapter.commit()
+        # do we still need to do this?
+        #if hasattr(user, 'reset_password_token'):
+        #    db_adapter = user_manager.db_adapter
+        #    db_adapter.update_object(user, reset_password_token=token)
+        #    db_adapter.commit()
 
         # Send forgot_password signal
         # signals.user_forgot_password.send(current_app._get_current_object(), user=user)
@@ -215,15 +134,15 @@ def send_reset_password_email(email):
 def forgot_password():
     """Prompt for email and send reset password email."""
     user_manager =  current_app.user_manager
-    db_adapter = user_manager.db_adapter
 
     # Initialize form
-    form = user_manager.forgot_password_form(request.form)
+    from flask_user.forms import ForgotPasswordForm
+    form = ForgotPasswordForm(request.form)
 
     # Process valid POST
     if request.method=='POST' and form.validate():
         email = form.email.data
-        user, user_email = user_manager.find_user_by_email(email)
+        user, user_email = user_manager.db_manager.get_user_and_user_email_by_email(email)
 
         if user:
             send_reset_password_email(email)

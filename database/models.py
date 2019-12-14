@@ -30,7 +30,7 @@ class User(Base, UserMixin):
                       server_default=u'',
                       unique=True)
 
-    confirmed_at = db.Column(db.DateTime())
+    email_confirmed_at = db.Column('confirmed_at', db.DateTime())
     password = db.Column(db.String(255), nullable=False, server_default='')
     reset_password_token = db.Column(db.String(100),
                                      nullable=False,

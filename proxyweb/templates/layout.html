@@ -32,7 +32,7 @@
       </div>
       <div class="pull-right">
           {% if current_user.is_authenticated %}
-          <a href="{{ url_for('user.profile') }}" title="You have the bestest name"><i>{{ current_user.first_name or current_user.email }}</i></a>
+          <a href="{{ url_for('users.user_profile_page') }}" title="You have the bestest name"><i>{{ current_user.first_name or current_user.email }}</i></a>
               &nbsp; | &nbsp;
               <a href="{{ url_for('user.logout') }}">Sign out</a>
           {% else %}

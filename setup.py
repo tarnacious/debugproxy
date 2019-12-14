@@ -25,7 +25,7 @@ setup(
         'Flask-SQLAlchemy',
         'Flask-WTF',
         'Flask-User',
-        'requests==2.17.3',
+        'requests',
 
         # Development
         'pytest',

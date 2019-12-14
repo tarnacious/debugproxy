@@ -10,10 +10,9 @@ from database.models import ProxySession, Request, Intercept
 from database.models import Organization, User
 from sqlalchemy.exc import IntegrityError
 from flask import current_app
-from flask_user import emails
+from flask_user.email_manager import EmailManager
 from flask_login import logout_user, login_user
 from datetime import datetime
-from flask_user.translations import gettext as _
 from urllib.parse import quote      # Python 3.x
 from proxyweb.views import blueprint
 from typing import Any
@@ -85,15 +84,10 @@ def invite_user(user_id: str) -> Any:
     user = User.query. \
         filter(User.id == user_id).first()
     user_manager = current_app.user_manager
-    token = user_manager.generate_token(int(user_id))
-    confirm_email_link = url_for('users.register',
-                                 token=token,
-                                 _external=True)
-    user.reset_password_token = token
-    db.session.commit()
 
     try:
-        emails.send_registered_email(user, None, confirm_email_link)
+        email_manager = EmailManager(current_app)
+        email_manager.send_registered_email(user, None, True)
         flash("Invitaton sent")
     except Exception as e:
         flash("Error sending emails", 'error')

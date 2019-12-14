@@ -1,6 +1,5 @@
 from flask_wtf import Form
 from flask import current_app
-from flask_user.translations import lazy_gettext as _
 from wtforms import StringField, SubmitField, PasswordField, HiddenField, \
     validators, ValidationError, SelectField, IntegerField
 from typing import Any
@@ -45,19 +44,18 @@ class OrganizationForm(Form):
 
 class UserRegisterForm(Form):
     password_missmatch = 'New Password and Retype Password did not match'
-    new_password = PasswordField(_('New Password'), validators=[
-        validators.DataRequired(_('New Password is required'))])
-    retype_password = PasswordField(_('Retype New Password'), validators=[
+    new_password = PasswordField('New Password', validators=[
+        validators.DataRequired('New Password is required')])
+    retype_password = PasswordField('Retype New Password', validators=[
         validators.EqualTo('new_password',
-                           message=_(password_missmatch))])
+                           message=password_missmatch)])
     next = HiddenField()
-    submit = SubmitField(_('Register'))
+    submit = SubmitField('Register')
 
     def validate(self) -> bool:
         # Use feature config to remove unused form fields
         user_manager = current_app.user_manager
-        if not user_manager.enable_retype_password:
-            delattr(self, 'retype_password')
+        delattr(self, 'retype_password')
         # Add custom password validator if needed
         has_been_added = False
         for v in self.new_password.validators:
@@ -81,8 +79,8 @@ class RegisterForm(Form):
 def password_validator(form: Form, field: Any) -> bool:
     is_valid = len(field.data) >= 6
     if not is_valid:
-        raise ValidationError(_('Password must have at least 6 characters'))
-
+        raise ValidationError('Password must have at least 6 characters')
+    return True
 
 class SessionForm(Form):
     username = StringField('Username')

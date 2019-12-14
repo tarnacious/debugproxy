@@ -9,7 +9,6 @@ from typing import Any
 from config import read_config
 from database.models import ProxySession
 from sqlalchemy.exc import IntegrityError
-from flask_user import emails
 import database as db
 import requests
 from email.utils import parseaddr

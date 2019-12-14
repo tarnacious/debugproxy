@@ -2,11 +2,10 @@ from flask import Flask
 from flask import flash, redirect, url_for, request
 from flask_mail import Mail
 from flask_migrate import Migrate, MigrateCommand
-from flask_user import UserManager, SQLAlchemyAdapter
 from flask_wtf.csrf import CSRFProtect, CSRFError
 from proxyweb import app, manager
 from proxyweb.startup.init_logging import init_logging
-
+from proxyweb.startup.custom_user_manager import CustomUserManager
 from proxyweb.views.users import blueprint as users_blueprint
 from proxyweb.views.home import blueprint as home_blueprint
 from proxyweb.views.organizations import blueprint as organizations_blueprint
@@ -49,19 +48,12 @@ def create_app() -> Flask:
 
     # Setup Flask-User to handle user account related forms
     from database.models import User, UserInvitation
-    from proxyweb.views.forms import MyRegisterForm
-    from proxyweb.views.users import user_profile_page
-    from proxyweb.views.forms import password_validator
-
     import database
-    db_adapter = SQLAlchemyAdapter(database, User, UserInvitationClass=UserInvitation)
 
-    UserManager(db_adapter,
-                app,
-                register_form=MyRegisterForm,
-                user_profile_view_function=user_profile_page,
-                password_validator=password_validator
-                )
+    CustomUserManager(app,
+                database,
+                User,
+                UserInvitationClass=UserInvitation)
 
     app.register_blueprint(home_blueprint)
     app.register_blueprint(users_blueprint)
