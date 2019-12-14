@@ -15,15 +15,17 @@
 		    {{ form.hidden_tag() }}
 		    {{ render_field(form.email, tabindex=10) }}
 
-        <div class="form-group {% if form.captcha.errors %}has-error{% endif %}">
-          <div class="g-recaptcha"
-               data-sitekey="6LfQJDAUAAAAAMQ_2QYNTx8hXB4jAjiS-4m5LxJj"></div>
-          {% if form.captcha.errors %}
-              {% for e in form.captcha.errors %}
-                  <p class="help-block">{{ e }}</p>
-              {% endfor %}
+        {% if show_captcha %}
+          <div class="form-group {% if form.captcha.errors %}has-error{% endif %}">
+            <div class="g-recaptcha"
+                 data-sitekey="6LfQJDAUAAAAAMQ_2QYNTx8hXB4jAjiS-4m5LxJj"></div>
+            {% if form.captcha.errors %}
+                {% for e in form.captcha.errors %}
+                    <p class="help-block">{{ e }}</p>
+                {% endfor %}
+            {% endif %}
+            </div>
           {% endif %}
-          </div>
 		    {{ render_submit_field(form.submit, tabindex=90) }}
       </div>
       <p> 

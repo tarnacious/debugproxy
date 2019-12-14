@@ -28,27 +28,29 @@ url = config["WEBSITE_URL"]
 
 @blueprint.route('register', methods=['GET', 'POST'])
 def register() -> Any:
+    show_captcha = current_app.config.get("USE_GOOGLE_CAPTCHA", False) == True
     form = RegisterForm(request.form)
 
     if request.method == 'POST' and form.validate():
 
         errors = False
 
-        try:
-            recapture_response = request.form["g-recaptcha-response"]
-            response = requests.post('https://www.google.com/recaptcha/api/siteverify', data =
-                {
-                    'secret':'6LfQJDAUAAAAAMLs_76cpqJjfXcBAuVaOVX4FdHL',
-                    'response': recapture_response
-                }
-            )
-            captcha_success = response.json()["success"]
-        except:
-            captcha_success = False
+        if show_captcha:
+            try:
+                recapture_response = request.form["g-recaptcha-response"]
+                response = requests.post('https://www.google.com/recaptcha/api/siteverify', data =
+                    {
+                        'secret':'6LfQJDAUAAAAAMLs_76cpqJjfXcBAuVaOVX4FdHL',
+                        'response': recapture_response
+                    }
+                )
+                captcha_success = response.json()["success"]
+            except:
+                captcha_success = False
 
-        if not captcha_success:
-            errors = True
-            form.captcha.errors.append('The capture did not validate, are you human?')
+            if not captcha_success:
+                errors = True
+                form.captcha.errors.append('The capture did not validate, are you human?')
 
         valid_email_address = '@' in parseaddr(form.email.data)[1]
 
@@ -63,13 +65,13 @@ def register() -> Any:
             errors = True
 
         if errors:
-            return render_template('login/register.html', form=form)
+            return render_template('login/register.html', form=form, show_captcha=show_captcha)
 
         organization = Organization.query.filter(Organization.name == "debugproxy").first()
 
         if not organization:
             flash("Unable to create user. Please try again later.")
-            return render_template('login/register.html', form=form)
+            return render_template('login/register.html', form=form, show_captcha=show_captcha)
 
         user = User()
         form.populate_obj(user)
@@ -82,6 +84,7 @@ def register() -> Any:
         except IntegrityError:
             db.session.rollback()
             flash("Unable to create user. Please try again later.")
+            return render_template('login/register.html', form=form, show_captcha=show_captcha)
 
         email_manager = EmailManager(current_app)
         email_manager.send_registered_email(user, None, True)
@@ -89,6 +92,7 @@ def register() -> Any:
         return redirect(url_for('login.registration_email_sent'))
 
 
+    return render_template('login/register.html', form=form, show_captcha=show_captcha)
 
 
 @blueprint.route('registration-email-sent', methods=['GET', 'POST'])
