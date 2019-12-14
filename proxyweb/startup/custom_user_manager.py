@@ -1,7 +1,6 @@
 from flask_user import UserManager
 from proxyweb.views.forms import MyRegisterForm
 from proxyweb.views.users import user_profile_page
-from proxyweb.views.forms import password_validator
 from proxyweb.views.forms import UserRegisterForm
 from flask import current_app, request, url_for, flash, redirect, render_template
 from flask_user import current_user
@@ -10,13 +9,13 @@ from datetime import datetime
 from typing import Any
 from flask_user import signals
 from flask_user.translation_utils import lazy_gettext as _  # map _() to lazy_gettext()
+from wtforms import ValidationError
+
 
 class CustomUserManager(UserManager):
 
   def customize(self, app):
     self.RegisterFormClass = MyRegisterForm
-    #self.user_profile_view_function = user_profile_page
-    #self.password_validator = password_validator
 
   def confirm_email_view(self, token: str) -> Any:
     """ Verify the password reset token, Prompt for new password, and set the
@@ -76,3 +75,9 @@ class CustomUserManager(UserManager):
 
     # Process GET or invalid POST
     return render_template('login/register_set_password.html', form=form)
+
+  def password_validator(self, form, field):
+    is_valid = len(field.data) >= 6
+    if not is_valid:
+        raise ValidationError('Password must have at least 6 characters')
+    return True

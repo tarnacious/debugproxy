@@ -76,12 +76,6 @@ class RegisterForm(Form):
     submit = SubmitField('Register')
 
 
-def password_validator(form: Form, field: Any) -> bool:
-    is_valid = len(field.data) >= 6
-    if not is_valid:
-        raise ValidationError('Password must have at least 6 characters')
-    return True
-
 class SessionForm(Form):
     username = StringField('Username')
     password = StringField('Password')
