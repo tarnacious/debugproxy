@@ -1,6 +1,6 @@
 from proxyweb import app
 import unittest
-from proxyweb.models.models import User, Organization
+from database.models import User, Organization
 
 from proxyweb.startup.create_users import create_users
 from proxyweb.startup.create_users import find_or_create_user, find_or_create_role

@@ -1,8 +1,6 @@
-from __future__ import print_function  # Use print() instead of print
 import pytest
 from flask import url_for
 from proxyweb.startup.create_users import create_users
-
 
 @pytest.mark.usefixtures('db')
 def test_page_urls(client):
@@ -11,11 +9,11 @@ def test_page_urls(client):
 
     # Visit home page
     response = client.get(url_for('home.home_page'), follow_redirects=True)
-    assert b'class="landing-page"' in response.data
+    assert b'Network debugging from your browser' in response.data
 
     # Visit login page
     response = client.get(url_for('user.login'), follow_redirects=True)
-    assert b'<h1>Sign in</h1>' in response.data
+    assert b'<h2>Sign in</h2>' in response.data
 
     # Login as user and visit User page
     response = client.post(url_for('user.login'), follow_redirects=True,
@@ -25,11 +23,11 @@ def test_page_urls(client):
 
     # Edit User Profile page
     response = client.get(url_for('users.user_profile_page'))
-    assert b'<h1>User Profile</h1>' in response.data
+    assert b'<h2>User Profile</h2>' in response.data
     response = client.post(url_for('users.user_profile_page'),
                            follow_redirects=True,
                            data=dict(first_name='User', last_name='User'))
 
     # Logout, returns to landing page
     response = client.get(url_for('user.logout'), follow_redirects=True)
-    assert b'class="landing-page"' in response.data
+    assert b'Network debugging from your browser' in response.data

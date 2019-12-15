@@ -1,7 +1,7 @@
 import pytest
 import unittest
-from proxyweb import db
-from proxyweb.models.models import Organization, User, ProxySession
+from database.models import Organization, User, ProxySession
+import database as db
 
 
 @pytest.mark.usefixtures('db')

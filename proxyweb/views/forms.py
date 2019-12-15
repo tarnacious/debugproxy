@@ -1,4 +1,4 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from flask import current_app
 from wtforms import StringField, SubmitField, PasswordField, HiddenField, \
     validators, ValidationError, SelectField, IntegerField
@@ -15,7 +15,7 @@ class MyRegisterForm(RegisterForm):
         validators.DataRequired('Last name is required')])
 
 
-class UserForm(Form):
+class UserForm(FlaskForm):
     email = StringField('Email Address', validators=[
         validators.Length(min=1, max=100),
         validators.Email("Email address must be valid")])
@@ -28,7 +28,7 @@ class UserForm(Form):
     submit = SubmitField('Save')
 
 
-class UserProfileForm(Form):
+class UserProfileForm(FlaskForm):
     first_name = StringField('First name', validators=[
         validators.DataRequired('First name is required')])
     last_name = StringField('Last name', validators=[
@@ -36,13 +36,13 @@ class UserProfileForm(Form):
     submit = SubmitField('Save')
 
 
-class OrganizationForm(Form):
+class OrganizationForm(FlaskForm):
     name = StringField('First name', validators=[
         validators.DataRequired('Name is required')])
     submit = SubmitField('Save')
 
 
-class UserRegisterForm(Form):
+class UserRegisterForm(FlaskForm):
     password_missmatch = 'New Password and Retype Password did not match'
     new_password = PasswordField('New Password', validators=[
         validators.DataRequired('New Password is required')])
@@ -70,17 +70,17 @@ class UserRegisterForm(Form):
         return True
 
 
-class RegisterForm(Form):
+class RegisterForm(FlaskForm):
     email = StringField('email')
     captcha = StringField('g-recaptcha-response')
     submit = SubmitField('Register')
 
 
-class SessionForm(Form):
+class SessionForm(FlaskForm):
     username = StringField('Username')
     password = StringField('Password')
     submit = SubmitField('Save')
 
-class InterceptForm(Form):
+class InterceptForm(FlaskForm):
     query = StringField('Query')
     submit = SubmitField('Save')

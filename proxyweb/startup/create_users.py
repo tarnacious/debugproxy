@@ -115,7 +115,7 @@ def find_or_create_user(first_name: str,
                     last_name=last_name,
                     password=app.user_manager.hash_password(password),
                     active=True,
-                    confirmed_at=datetime.utcnow(),
+                    email_confirmed_at=datetime.utcnow(),
                     organization_id=organization.id)
         for role in roles:
             user.roles.append(role)

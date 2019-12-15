@@ -1,11 +1,13 @@
 import pytest
 import os
-from proxyweb import db as the_db
+import database as the_db
 from proxyweb.startup.create_app import create_app
 
 db_connection = 'postgresql://postgres:password@localhost/website-test'
 
-the_app = create_app(dict(
+the_app = create_app()
+
+the_app.config.update(dict(
     TESTING=True,
     LOGIN_DISABLED=False,
     MAIL_SUPPRESS_SEND=True,

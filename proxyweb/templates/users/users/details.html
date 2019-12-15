@@ -17,7 +17,7 @@
 		<div class="user-details">{{ user.email }} </div>
 
 		<label>Confirmed at</label>
-		<div class="user-details">{{ user.confirmed_at }} </div>
+		<div class="user-details">{{ user.email_confirmed_at }} </div>
 
 
 		<form action="{{ url_for('users.invite_user', user_id=user.id) }}"
