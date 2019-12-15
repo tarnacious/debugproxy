@@ -1,7 +1,7 @@
 import tornado.websocket
 import json
 import re
-from proxywebsocket.session import read_session
+from proxywebsocket.session import read_session, decrypt_user_id
 from itsdangerous import BadSignature
 from typing import List, Set, Dict, Tuple, Text, Optional, Any
 from proxywebsocket.connections import Connections
@@ -70,7 +70,7 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
             session = None
 
         if session and "user_id" in session:
-            user_id = session["user_id"]
+            user_id = decrypt_user_id(session["user_id"])
             self.client_key = "{}_{}".format(user_id, session_id)
             self.user_id = user_id
             self.session_id = session_id

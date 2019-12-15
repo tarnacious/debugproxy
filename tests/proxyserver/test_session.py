@@ -1,5 +1,5 @@
 import pytest
-from proxywebsocket.session import read_session
+from proxywebsocket.session import read_session, decrypt_user_id
 from itsdangerous import BadSignature
 
 expected = {
@@ -20,6 +20,10 @@ def test_decode_session_raises():
     with pytest.raises(BadSignature):
         result = read_session("invalid token")
 
+def test_decrypt_user_id():
+    cipher_text = 'gAAAAABd9p_P4VoQ3TYD2MnLTNn6Rm22yRIXHH0Kh5utoq6gYSqpCUL9s2y_6tymTzTX2tFW0OOmv-4kPAL2l2NPdOsb9_ckHw'
+    plain_text = decrypt_user_id(cipher_text)
+    assert plain_text == 2
 
 from proxywebsocket.session import verify_password
 

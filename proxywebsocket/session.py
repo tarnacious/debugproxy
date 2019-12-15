@@ -22,6 +22,18 @@ def read_session(string: str) -> Any:
     return data
 
 
+from flask_user.token_manager import TokenManager
+
+class FakeFlaskApp(object):
+    @property
+    def config(self):
+        return {
+            'SECRET_KEY': SECRET_KEY
+        }
+
+def decrypt_user_id(cipher_text):
+    token_manager = TokenManager(FakeFlaskApp())
+    return token_manager.verify_token(cipher_text)[0]
 
 from passlib.context import CryptContext
 
