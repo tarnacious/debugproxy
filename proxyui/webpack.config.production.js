@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var webpack = require('webpack');
 var config = require('./webpack.config.base.js');
 
@@ -10,15 +11,15 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 config.bail = true;
 config.profile = false;
 config.devtool = '#source-map';
+config.mode = 'production';
 
 config.output = {
-  path: './dist/client',
+  path: path.join(process.cwd(), '/dist/client'),
   publicPath: '/',
   filename: 'main.js'
 };
 
 config.entry = [
-  'babel-polyfill'
 ].concat(config.entry);
 
 config.plugins = config.plugins.concat([
@@ -26,23 +27,9 @@ config.plugins = config.plugins.concat([
        debug: false
      }),
   new webpack.optimize.OccurrenceOrderPlugin(true),
-  new webpack.optimize.UglifyJsPlugin({
-    output: {
-      comments: false
-    },
-    compress: {
-      warnings: false,
-      screw_ie8: true
-    }
-  }),
   new SaveAssetsJson({
     path: process.cwd(),
     filename: 'assets.json'
-  }),
-  new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify('production')
-    }
   })
 ]);
 
@@ -52,7 +39,7 @@ config.module.rules = config.module.rules.concat([
     exclude: /node_modules/,
     loader: "babel-loader",
     query: {
-        presets: ['es2015', 'react']
+        presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-flow']
     }
   }
 ]);

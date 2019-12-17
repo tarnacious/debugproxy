@@ -3,6 +3,8 @@
 var webpack = require('webpack');
 var config = require('./webpack.config.base.js');
 
+config.mode = 'development'
+
 if (process.env.NODE_ENV !== 'test') {
   config.entry = [
     'babel-polyfill',
