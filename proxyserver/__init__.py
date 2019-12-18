@@ -1,5 +1,6 @@
 from multiprocessing import Process
 from logging.config import fileConfig
+from mitmproxy.tools import cmdline
 import logging
 import concurrent_log_handler
 fileConfig('config/logging.ini')
@@ -10,7 +11,7 @@ logging.getLogger("hpack").setLevel(logging.WARNING)
 def proxyserver() -> None:
     from proxyserver.master import Master
     from mitmproxy.tools.main import run
-    run(Master, None)
+    run(Master, cmdline.mitmproxy, None)
 
 def proxyworker() -> None:
     from proxyworker.worker import worker

@@ -28,11 +28,10 @@ AsyncIOMainLoop().install()
 
 class Master(master.Master):
     def __init__(self,
-                 options: Any,
-                 server: mitmproxy.proxy.server.ProxyServer) -> None:
+                 options: Any) -> None:
 
-        options.body_size_limit = str(4 * 1000000) # 4mb for now.
-        super().__init__(options, server)
+        #options.body_size_limit = str(4 * 1000000) # 4mb for now.
+        super().__init__(options)
 
         config = read_config()
         self.proxy_server_port = config["PROXYSERVER_PORT"]
@@ -76,7 +75,6 @@ class Master(master.Master):
 
         iol = tornado.ioloop.IOLoop.instance()
         iol.add_callback(self.start)
-        tornado.ioloop.PeriodicCallback(lambda: self.tick(timeout=0), 5).start()
         tornado.ioloop.PeriodicCallback(lambda: self.clean(), 5000).start()
         tornado.ioloop.PeriodicCallback(lambda: self.post_stats(), 10000).start()
 

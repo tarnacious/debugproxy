@@ -1,4 +1,4 @@
-git+git://github.com/tarnacious/mitmproxy.git@master#egg=mitmproxy
+mitmproxy==5.0.0
 git+git://github.com/tarnacious/Flask-User.git@debugproxy#egg=Flask-User
 aioredis==1.3.1
 rratelimit==0.0.5
