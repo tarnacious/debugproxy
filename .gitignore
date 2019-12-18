@@ -18,3 +18,4 @@ tags
 *.retry
 .build
 .coverage
+.mypy_cache
