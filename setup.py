@@ -31,7 +31,6 @@ setup(
         'pytest',
         'pytest-flask',
         'pytest-cov',
-        'pytest-capturelog',
         'testfixtures',
         'Flask-Assets',
         'webassets',
