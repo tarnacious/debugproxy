@@ -11,7 +11,7 @@ the_app.config.update(dict(
     TESTING=True,
     LOGIN_DISABLED=False,
     MAIL_SUPPRESS_SEND=True,
-    SERVER_NAME='localhost',
+    SERVER_NAME='localhost.localdomain',
     SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_TEST_DATABASE_URI',
                                            db_connection),
     WTF_CSRF_ENABLED=False
