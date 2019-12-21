@@ -20,6 +20,7 @@ setup(
         'gunicorn',
         'psycopg2',
         'Flask',
+        'Flask-Script',
         'Flask-Login',
         'Flask-Migrate',
         'Flask-SQLAlchemy',
