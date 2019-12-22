@@ -38,12 +38,8 @@ def create_app() -> Flask:
 
     app.jinja_env.globals['bootstrap_is_hidden_field'] = is_hidden_field_filter
 
-    # Setup a logger
-    # REVISIT: This line now seems to break the logging.
-    # app.logger
     from logging.config import fileConfig
     fileConfig('config/logging.ini')
-
     app.logger.info("create_app")
 
     # Setup Flask-User to handle user account related forms
