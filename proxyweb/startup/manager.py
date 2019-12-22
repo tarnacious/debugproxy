@@ -2,7 +2,7 @@ from proxyweb import manager
 import database as db
 from proxyweb.startup.create_users import find_or_create_organization, \
     find_or_create_user, create_user_command, create_admin_command, \
-    create_session_command
+    create_session_command, create_debugproxy_organization
 
 from proxyweb.startup.create_users import create_users
 from database.models import Organization, User
@@ -11,20 +11,18 @@ from database.models import Organization, User
 @manager.command
 def init_db(): # type: ignore
     db.create_all()
-
+    create_debugproxy_organization("debugproxy")
 
 @manager.command
 def drop_db(): # type: ignore
     db.session.commit()
     db.drop_all()
 
-
 @manager.command
 def clear_db(): # type: ignore
     db.session.query(Organization).delete()
     db.session.query(User).delete()
     db.session.commit()
-
 
 @manager.command
 def create_admin(email, password):

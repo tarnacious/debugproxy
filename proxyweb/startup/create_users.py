@@ -5,6 +5,14 @@ from database.models import Organization, User, Role, ProxySession
 from typing import List, Set, Dict, Tuple, Text, Optional, Any
 
 
+def create_debugproxy_organization(name):
+    organization = Organization.query.filter(Organization.name == name).first()
+    if not organization:
+        organization = Organization(name=name)
+        db.session.add(organization)
+        db.session.commit()
+
+
 def create_admin_command(email, password) -> None:
     admin_role = find_or_create_role('admin', u'Admin')
     system_admin_role = find_or_create_role('system_admin', u'System Admin')
