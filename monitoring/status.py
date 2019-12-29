@@ -1,5 +1,6 @@
 import asyncio
 import aioredis
+from aioredis import Redis
 from redis import StrictRedis
 from config import read_config
 config = read_config()
@@ -22,8 +23,8 @@ async def _print_stats(loop):
 
     pool = await create_connection_pool(loop)
 
-    with await pool as redis:
-        worker_queue_length = await redis.llen(worker_queue)
+    redis = Redis(pool)
+    worker_queue_length = await redis.llen(worker_queue)
 
     requests_5s = await get_counter(pool, "requests", 5)
     requests_60s = await get_counter(pool, "requests", 60)

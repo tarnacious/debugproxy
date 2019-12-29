@@ -14,6 +14,7 @@ The projects is made up of several components.
 * proxyserver - proxy server and websocket server
 * proxyworker - authenticate proxy requests, lookup intercepts, store requests
 * proxywebsocket - websocket server for sending request details to the client
+* monitoring - tool to print 5s/60s/1h sliding window stats
 
 The default configuration works for development when one instance of each
 service is started locally using the instructions below.

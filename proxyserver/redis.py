@@ -74,15 +74,15 @@ async def increment_counter(redis_pool, name, count=1, now=None):
 
 from datetime import datetime
 async def get_counter(redis_pool, name, precision, samples=30):
-   with await redis_pool as redis:
-       hash = '%s:%s'%(precision, name)
-       data = await redis.hgetall('count:' + hash)
-       results = []
-       pnow = int(time.time() / precision) * precision
-       for index in range(samples):
-           key = str(pnow - (index * precision)).encode("utf-8")
-           results.append(int(data.get(key, 0)))
-       return results
+   redis = Redis(redis_pool)
+   hash = '%s:%s'%(precision, name)
+   data = await redis.hgetall('count:' + hash)
+   results = []
+   pnow = int(time.time() / precision) * precision
+   for index in range(samples):
+       key = str(pnow - (index * precision)).encode("utf-8")
+       results.append(int(data.get(key, 0)))
+   return results
 
 SAMPLE_COUNT = 30
 async def clean_counters(redis_pool):
