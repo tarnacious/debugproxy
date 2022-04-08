@@ -68,7 +68,7 @@
     "immutable": "3.8.2",
     "install": "0.13.0",
     "jest-cli": "18.1.0",
-    "moment": "2.24.0",
+    "moment": "2.29.2",
     "node-sass": "4.13.0",
     "react-ace": "4.4.0",
     "react-addons-css-transition-group": "15.6.2",
