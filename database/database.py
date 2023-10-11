@@ -8,7 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 config = read_config()
 database_uri = config["SQLALCHEMY_DATABASE_URI"]
 
-engine = create_engine(database_uri, convert_unicode=True)
+engine = create_engine(database_uri)
 Session = sessionmaker(autocommit=False,
                        autoflush=False,
                        bind=engine)

@@ -1,17 +1,22 @@
-git+git://github.com/tarnacious/mitmproxy.git@debugproxy#egg=mitmproxy
-git+git://github.com/tarnacious/Flask-User.git@debugproxy#egg=Flask-User
+git+https://github.com/tarnacious/mitmproxy.git@debugproxy#egg=mitmproxy
+git+https://github.com/tarnacious/Flask-User.git@debugproxy#egg=Flask-User
 aioredis==1.3.1
 rratelimit==0.0.5
 redis==2.10.5
 cssmin==0.2.0
 gunicorn==20.0.4
+SQLAlchemy==1.3.15
 psycopg2==2.8.4
+# pin these dependencies for outdated Flask 1.1.1
+Jinja2==3.0.3
+itsdangerous==2.0.1
+werkzeug==2.0.3
 Flask==1.1.1
 Flask-Script==2.0.6
 Flask-Login==0.4.1
 Flask-Migrate==2.5.2
 Flask-SQLAlchemy==2.4.1
-Flask-WTF==0.14.2
+Flask-WTF==0.14.3
 #Flask-User==1.0.2.2
 pytest==5.3.1
 pytest-flask==0.15.0
