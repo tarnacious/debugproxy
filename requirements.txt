@@ -11,6 +11,7 @@ psycopg2==2.8.4
 Jinja2==3.0.3
 itsdangerous==2.0.1
 werkzeug==2.0.3
+email_validator==2.0.0
 Flask==1.1.1
 Flask-Script==2.0.6
 Flask-Login==0.4.1
