@@ -204,7 +204,7 @@ def traffic(session_id: str) -> Any:
                                   session.password,
                                   proxyserver_url)
 
-    curl_url = 'curl debugproxy.com --proxy "{}"'.format(proxy_url)
+    curl_url = 'curl debugproxy.tarnbarford.net --proxy "{}"'.format(proxy_url)
 
     return render_template('sessions/traffic.html',
                            session=session,
