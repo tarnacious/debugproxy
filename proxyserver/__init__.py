@@ -37,5 +37,5 @@ def generate_certificates():
 
     from mitmproxy.certs import CertStore
     print("Writing certificates to ", p);
-    CertStore.create_store(p, "mitmproxy", "debugproxy", "debugproxy")
+    CertStore.create_store(p, "mitmproxy", 2048, organization="debugproxy", cn="debugproxy")
     print("Exiting.");
